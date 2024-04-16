@@ -281,7 +281,7 @@ function App() {
 						<a href="" target="_self"><img src="/img/logo.png" alt="logo"/></a>
 					</div>
 					<div className="header__logo _dark">
-						<a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
+						<a href="" target="_self"><img src="/img/logo_dark.png'" alt="logo"/></a>
 					</div>
 					<nav className="header__nav">
 						<button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard">Создать новую задачу</a></button>
