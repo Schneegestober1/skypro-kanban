@@ -1,8 +1,8 @@
-export const Column = () => {
+export const Column = ({title}) => {
     return (
         <div className="main__column column">
                         <div className="column__title">
-                            <p>Без статуса</p>
+                            <p>{title}</p>
                         </div>
                         <div className="cards">
                             <div className="cards__item">
