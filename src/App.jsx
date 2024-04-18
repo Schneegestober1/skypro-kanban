@@ -7,15 +7,15 @@ import { PopUSer } from './componets/Popups/Popuser/PopUser.jsx'
 
 function App() {
   return (
-  <div className="wrapper">
-	{/* pop-up start */}
-	<PopUSer/>
-	<PopNewCard/>
-	<PopBrowse/>
-	{/* pop-up end */}
-	<Header/>
-	<Main/>	
-  </div>
+	<div className="wrapper">
+		{/* pop-up start */}
+		<PopUSer/>
+		<PopNewCard/>
+		<PopBrowse/>
+		{/* pop-up end */}
+		<Header/>
+		<Main/>	
+	</div>
   )
 }
 export default App
