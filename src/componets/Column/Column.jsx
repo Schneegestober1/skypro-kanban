@@ -8,7 +8,7 @@ export const Column = ({title}) => {
             </div>
             <div className="cards">
                 <Card name={'Web Design'} color={'_orange'}/>
-                <Card name={'Researcg'} color={'_green'}/>
+                <Card name={'Research'} color={'_green'}/>
                 <Card name={'Copywriting'} color={'_purple'}/>
             </div>
         </div>	
