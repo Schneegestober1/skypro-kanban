@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const Header = () => {
+export const Header = ({addCard}) => {
 	const [isOpenedModalUserWindow, setIsOpenedModalUserWindow] = useState(false);
 
 	function handlerOpenModalWindow(event) {
@@ -19,7 +19,7 @@ export const Header = () => {
 						<a href="" target="_self"><img src="/img/logo_dark.png'" alt="logo"/></a>
 					</div>
 					<nav className="header__nav">
-						<button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard">Создать новую задачу</a></button>
+						<button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></button>
 						<a href="#user-set-target" className="header__user _hover02" onClick={(event) => handlerOpenModalWindow(event)}>Ivan Ivanov</a>
 							{isOpenedModalUserWindow && (
 								<div className="header__pop-user-set pop-user-set" id="user-set-target">

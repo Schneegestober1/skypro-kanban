@@ -1,4 +1,4 @@
-export const Card = ({name, date}) => {
+export const Card = ({topic, date, title}) => {
     const colors = {
         'Web Design': '_orange',
         'Research': '_green',
@@ -8,8 +8,8 @@ export const Card = ({name, date}) => {
         <div className="cards__item">
             <div className="cards__card card">
                 <div className="card__group">
-                    <div className={`card__theme ${colors[name]}`}>
-                        <p>{name}</p>
+                    <div className={`card__theme ${colors[topic]}`}>
+                        <p>{topic}</p>
                     </div>
                     <a href="#popBrowse" target="_self">
                         <div className="card__btn">
@@ -21,7 +21,7 @@ export const Card = ({name, date}) => {
                 </div>
                 <div className="card__content">
                     <a href="" target="_blank">
-                        <h3 className="card__title">Название задачи</h3>
+                        <h3 className="card__title">{title}</h3>
                     </a>
                     <div className="card__date">
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
