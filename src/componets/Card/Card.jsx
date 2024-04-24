@@ -1,9 +1,14 @@
 export const Card = ({name, date}) => {
+    const colors = {
+        'Web Design': '_orange',
+        'Research': '_green',
+        'Copywriting': '_purple', 
+    }
     return (
         <div className="cards__item">
             <div className="cards__card card">
                 <div className="card__group">
-                    <div className={`card__theme}`}>
+                    <div className={`card__theme ${colors[name]}`}>
                         <p>{name}</p>
                     </div>
                     <a href="#popBrowse" target="_self">

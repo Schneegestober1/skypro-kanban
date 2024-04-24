@@ -10,7 +10,7 @@ import { tasks } from './data.js'
 
 function App() {
 	const [cards, setCards] = useState(tasks);
-	console.log(cards);
+
   return (
 	<div className="wrapper">
 		{/* pop-up start */}
