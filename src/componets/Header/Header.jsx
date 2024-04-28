@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { Container } from "../../global.styled";
+import { Container } from "../../global.styled.js";
+import * as S from './header.styled.js'
 
 export const Header = ({addCard}) => {
 	const [isOpenedModalUserWindow, setIsOpenedModalUserWindow] = useState(false);
@@ -10,16 +11,16 @@ export const Header = ({addCard}) => {
 	}
 
     return (
-        <header className="header">
+        <S.Header>
 			<Container>
-				<div className="header__block">
-					<div className="header__logo _show _light">
+				<S.HeaderBlock>
+					<S.HeaderLogo>
 						<a href="" target="_self"><img src="/img/logo.png" alt="logo"/></a>
-					</div>
-					<div className="header__logo _dark">
+					</S.HeaderLogo>
+					<S.HeaderLogo>
 						<a href="" target="_self"><img src="/img/logo_dark.png'" alt="logo"/></a>
-					</div>
-					<nav className="header__nav">
+					</S.HeaderLogo>
+					<S.HeaderNav>
 						<button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></button>
 						<a href="#user-set-target" className="header__user _hover02" onClick={(event) => handlerOpenModalWindow(event)}>Ivan Ivanov</a>
 							{isOpenedModalUserWindow && (
@@ -33,9 +34,9 @@ export const Header = ({addCard}) => {
 									<button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
 								</div>
 							)}
-					</nav>					
-				</div>
+					</S.HeaderNav>					
+				</S.HeaderBlock>
 			</Container>			
-		</header>
+		</S.Header>
     )
 }
