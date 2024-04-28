@@ -18,7 +18,7 @@ export const Header = ({addCard}) => {
 						<a href="" target="_self"><img src="/img/logo.png" alt="logo"/></a>
 					</S.HeaderLogo>
 					<S.HeaderLogo>
-						<a href="" target="_self"><img src="/img/logo_dark.png'" alt="logo"/></a>
+						<a href="" target="_self"><img src="/img/logo_dark.png" alt="logo"/></a>
 					</S.HeaderLogo>
 					<S.HeaderNav>
 						<button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></button>
