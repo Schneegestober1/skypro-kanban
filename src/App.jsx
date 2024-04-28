@@ -6,6 +6,7 @@ import { PopBrowse } from './componets/Popups/PopBrowse/PopBrowse.jsx'
 import { PopNewCard } from './componets/Popups/PopNewCard/PopNewCard.jsx'
 import { PopUSer } from './componets/Popups/Popuser/PopUser.jsx'
 import { tasks } from './data.js'
+import { Wrapper } from './global.styled.js'
 
 
 function App() {
@@ -31,12 +32,12 @@ function App() {
 		setIsLoading(true)
 		setTimeout(() => {
 			setIsLoading(false)
-		}, 3500)
+		}, 1500)
 	}, [cards])
 
 
   return (
-	<div className="wrapper">
+	<Wrapper>
 		{/* pop-up start */}
 		<PopUSer/>
 		<PopNewCard/>
@@ -44,7 +45,7 @@ function App() {
 		{/* pop-up end */}
 		<Header addCard={addCard}/>
 		<Main isLoading={isLoading} cards={cards}/>	
-	</div>
+	</Wrapper>
   )
 }
 export default App

@@ -1,9 +1,10 @@
+import { Container } from "../../global.styled"
 import { Column } from "../Column/Column"
 
 export const Main = ({cards, isLoading}) => {
     return (
         <main className="main"> 
-            <div className="container">
+            <Container>
                 <div className="main__block">
                     {isLoading ? 'Loading .....' : (
                         <div className="main__content">
@@ -15,7 +16,7 @@ export const Main = ({cards, isLoading}) => {
                     </div>
                     )}
                 </div>
-            </div>
+            </Container>
         </main>
     )
 }

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Container } from "../../global.styled";
 
 export const Header = ({addCard}) => {
 	const [isOpenedModalUserWindow, setIsOpenedModalUserWindow] = useState(false);
@@ -10,7 +11,7 @@ export const Header = ({addCard}) => {
 
     return (
         <header className="header">
-			<div className="container">
+			<Container>
 				<div className="header__block">
 					<div className="header__logo _show _light">
 						<a href="" target="_self"><img src="/img/logo.png" alt="logo"/></a>
@@ -34,7 +35,7 @@ export const Header = ({addCard}) => {
 							)}
 					</nav>					
 				</div>
-			</div>			
+			</Container>			
 		</header>
     )
 }
