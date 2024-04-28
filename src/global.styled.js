@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -68,4 +68,28 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
+`
+
+// export const Hover01 = (element) => styled[element]`
+// &:hover {
+//   background-color: #33399b;
+// }
+// `
+
+export const Hover01 = css`
+&:hover {
+  background-color: #33399b;
+}
+`
+
+// export const Hover02 = (element) => styled[element]`
+// &:hover {
+//   color: #33399b;
+// }
+// `
+
+export const Hover02 = css`
+&:hover {
+  color: #33399b;
+}
 `

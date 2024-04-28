@@ -657,7 +657,7 @@
   display: none;
 }
 
-.header {
+/* .header {
   width: 100%;
   margin: 0 auto;
   background-color: #FFFFFF;
@@ -682,7 +682,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 .header__btn-main-new {
   width: 178px;
   height: 30px;
@@ -698,7 +698,7 @@
 .header__btn-main-new a {
   color: #FFFFFF;
 }
-.header__user {
+/* .header__user {
   height: 20px;
   display: flex;
   flex-wrap: nowrap;
@@ -719,7 +719,7 @@
   transform: rotate(-45deg);
   margin: -6px 0 0 5px;
   padding: 0;
-}
+} */
 .header__pop-user-set {
   display: block;
   position: absolute;
