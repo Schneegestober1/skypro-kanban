@@ -21,7 +21,7 @@ export const Header = ({addCard}) => {
 						<a href="" target="_self"><img src="/img/logo_dark.png" alt="logo"/></a>
 					</S.HeaderLogo>
 					<S.HeaderNav>
-						<button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></button>
+						<S.HeaderBtnMainNew id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></S.HeaderBtnMainNew>
 						<S.HeaderUser href="#user-set-target" onClick={(event) => handlerOpenModalWindow(event)}>Ivan Ivanov</S.HeaderUser>
 							{isOpenedModalUserWindow && (
 								<div className="header__pop-user-set pop-user-set" id="user-set-target">

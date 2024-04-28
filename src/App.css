@@ -1,7 +1,4 @@
 
-
-
-
 ._hover01:hover {
   background-color: #33399b;
 }
@@ -683,7 +680,7 @@
   align-items: center;
   justify-content: center;
 } */
-.header__btn-main-new {
+/* .header__btn-main-new {
   width: 178px;
   height: 30px;
   border-radius: 4px;
@@ -694,10 +691,10 @@
   line-height: 1;
   font-weight: 500;
   margin-right: 20px;
-}
-.header__btn-main-new a {
+} */
+/* .header__btn-main-new a {
   color: #FFFFFF;
-}
+} */
 /* .header__user {
   height: 20px;
   display: flex;
@@ -736,48 +733,48 @@
   z-index: 2;
 }
 
-.main {
+/* .main {
   width: 100%;
   background-color: #EAEEF6;
-}
-.main__block {
+} */
+/* .main__block {
   width: 100%;
   margin: 0 auto;
   padding: 25px 0 49px;
-}
-.main__content {
+} */
+/* .main__content {
   width: 100%;
   display: flex;
-}
-.main__column {
+} */
+/* .main__column {
   width: 20%;
   margin: 0 auto;
   display: block;
-}
+} */
 
-.column__title {
+/* .column__title {
   padding: 0 10px;
   margin: 15px 0;
-}
-.column__title p {
+} */
+/* .column__title p {
   color: #94A6BE;
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-}
+} */
 
-.cards {
+/* .cards {
   width: 100%;
   display: block;
   position: relative;
-}
-.cards__item {
+} */
+/* .cards__item {
   padding: 5px;
   animation-name: card-animation;
   animation-duration: 500ms;
   animation-timing-function: linear;
-}
+} */
 .cards__card {
   width: 220px;
   height: 130px;

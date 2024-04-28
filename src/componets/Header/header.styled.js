@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Hover02 } from "../../global.styled";
+import { Hover01, Hover02 } from "../../global.styled";
 
 export const Header = styled.header`
   width: 100%;
@@ -37,7 +37,24 @@ export const HeaderNav = styled.nav`
   justify-content: center;
 `
 
+export const HeaderBtnMainNew = styled.button`
+ width: 178px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #565EEF;
+  color: #FFFFFF;
+  border: none;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 500;
+  margin-right: 20px;
 
+  a {
+  color: #FFFFFF;
+ }
+
+ ${Hover01}
+`
 
 export const HeaderUser = styled.a`
   height: 20px;
@@ -60,6 +77,11 @@ export const HeaderUser = styled.a`
   transform: rotate(-45deg);
   margin: -6px 0 0 5px;
   padding: 0;
+}
+
+&:hover::after {
+  border-left-color: #33399b;
+  border-bottom-color: #33399b;
 }
 
 ${Hover02}

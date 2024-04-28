@@ -1,3 +1,5 @@
+import { CardsItem } from "./card.styled"
+
 export const Card = ({topic, date, title}) => {
     const colors = {
         'Web Design': '_orange',
@@ -5,7 +7,7 @@ export const Card = ({topic, date, title}) => {
         'Copywriting': '_purple', 
     }
     return (
-        <div className="cards__item">
+        <CardsItem>
             <div className="cards__card card">
                 <div className="card__group">
                     <div className={`card__theme ${colors[topic]}`}>
@@ -39,6 +41,6 @@ export const Card = ({topic, date, title}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </CardsItem>
     )
 }
