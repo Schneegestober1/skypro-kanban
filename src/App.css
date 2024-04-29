@@ -341,14 +341,18 @@
   line-height: 1;
 }
 
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar {
   width: 182px;
   margin-bottom: 20px;
 }
+
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar__ttl {
   margin-bottom: 14px;
   padding: 0 7px;
 }
+
 .calendar__p {
   color: #94A6BE;
   font-size: 10px;
@@ -357,15 +361,21 @@
 .calendar__p span {
   color: #000000;
 }
+
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar__block {
   display: block;
 }
+
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar__month {
   color: #94A6BE;
   font-size: 14px;
   line-height: 25px;
   font-weight: 600;
 }
+
+
 .calendar__content {
   margin-bottom: 12px;
 }
@@ -405,6 +415,8 @@
   letter-spacing: -0.2px;
   cursor: pointer;
 }
+
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar__nav {
   width: 100%;
   display: flex;
@@ -413,6 +425,8 @@
   margin-top: 14px;
   padding: 0 7px;
 }
+
+
 .calendar__period {
   padding: 0 7px;
 }
@@ -851,25 +865,25 @@
 } */
 
 @media screen and (max-width: 1200px) {
-  .main__block {
+  /* .main__block {
     width: 100%;
     margin: 0 auto;
     padding: 40px 0 64px;
   }
   .main__content {
     display: block;
-  }
-  .main__column {
+  } */
+  /* .main__column {
     width: 100%;
     margin: 0 auto;
     display: block;
-  }
-  .cards {
+  } */
+  /* .cards {
     width: 100%;
     display: flex;
     overflow-y: auto;
-  }
-  .cards__card {
+  } */
+  /* .cards__card {
     width: 220px;
     height: 130px;
     background-color: #FFFFFF;
@@ -879,9 +893,11 @@
     align-items: flex-start;
     justify-content: stretch;
     padding: 15px 13px 19px;
-  }
+  } */
 }
 @media screen and (max-width: 660px) {
+
+  /* Не тогать */
   .pop-new-card {
     top: 70px;
   }
@@ -895,6 +911,10 @@
   .pop-new-card__wrap {
     display: block;
   }
+
+  /* Не тогать */
+
+
   .calendar {
     max-width: 340px;
     width: 100%;
@@ -924,6 +944,10 @@
     height: 42px;
     font-size: 14px;
   }
+
+
+   /* Не тогать */
+
   .pop-browse {
     top: 70px;
   }
@@ -937,7 +961,10 @@
   .pop-browse__wrap {
     display: block;
   }
+    /* Не тогать */
 }
+
+
 @media screen and (max-width: 495px) {
   .container {
     width: 100%;
@@ -954,6 +981,8 @@
     border-radius: 4px;
     margin-right: 0;
   }
+
+    /* Не тогать */
   .pop-new-card__container {
     padding: 0;
     justify-content: flex-start;
@@ -1009,7 +1038,10 @@
   .form-browse__area {
     height: 37px;
   }
+    /* Не тогать */
 }
+
+  /* Не тогать */
 @media only screen and (max-width: 375px) {
   .pop-exit__block {
     padding: 50px 20px;
@@ -1028,3 +1060,4 @@
     display: block;
   }
 }
+  /* Не тогать */

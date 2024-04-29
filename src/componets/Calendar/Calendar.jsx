@@ -1,10 +1,12 @@
+import * as R from './calendar.styled'
+
 export const Calendar = () => {
     return (
-        <div className="pop-new-card__calendar calendar">
-        <p className="calendar__ttl subttl">Даты</p>
-        <div className="calendar__block">
-            <div className="calendar__nav">
-                <div className="calendar__month">Сентябрь 2023</div>
+        <R.Calendar className="pop-new-card__calendar">
+        <R.CalendarTtl className="subttl">Даты</R.CalendarTtl>
+        <R.CalendarBlock>
+            <R.CalendarNav>
+                <R.CalendarMonth>Сентябрь 2023</R.CalendarMonth>
                 <div className="nav__actions">
                     <div className="nav__action" data-action="prev">
                         <svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11">
@@ -17,7 +19,7 @@ export const Calendar = () => {
                         </svg>
                     </div>
                 </div>
-            </div>
+            </R.CalendarNav>
             <div className="calendar__content">
                 <div className="calendar__days-names">
                     <div className="calendar__day-name">пн</div>
@@ -71,7 +73,7 @@ export const Calendar = () => {
             <div className="calendar__period">
                 <p className="calendar__p date-end">Срок исполнения: <span className="date-control">09.09.23</span></p>
             </div>
-        </div>
-    </div>
+        </R.CalendarBlock>
+        </R.Calendar>
     )
 }
