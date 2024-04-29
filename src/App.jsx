@@ -32,7 +32,7 @@ function App() {
 		setIsLoading(true)
 		setTimeout(() => {
 			setIsLoading(false)
-		}, 1500)
+		}, 500)
 	}, [cards])
 
 
