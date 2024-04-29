@@ -434,10 +434,12 @@
   padding: 0 7px;
 }
 
-
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar__period {
   padding: 0 7px;
 }
+
+
 
 /* Также используется в PopNewCard, пока не удлаяю*/
 .nav__actions {

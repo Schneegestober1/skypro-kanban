@@ -13,6 +13,7 @@ export const Calendar = styled.div`
     margin-bottom: 7px;
   }
 `
+
 export const CalendarTtl = styled.div`
   margin-bottom: 14px;
   padding: 0 7px;
@@ -21,9 +22,11 @@ export const CalendarTtl = styled.div`
     padding: 0;
   }
 `
+
 export const CalendarBlock = styled.div`
   display: block;
 `
+
 export const CalendarNav = styled.div`
   width: 100%;
   display: flex;
@@ -37,17 +40,20 @@ export const CalendarNav = styled.div`
   }
 
 `
+
 export const CalendarMonth = styled.div`
   color: #94A6BE;
   font-size: 14px;
   line-height: 25px;
   font-weight: 600;
 `
+
 export const NavActions = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `
+
 export const NavAction = styled.div`
   width: 18px;
   height: 25px;
@@ -60,9 +66,11 @@ export const NavAction = styled.div`
   fill: #94A6BE;
 }
 `
+
 export const CalendarContent = styled.div`
 margin-bottom: 12px;
 `
+
 export const CalendarDaysNames = styled.div`
   display: flex;
   flex-wrap: nowrap;
@@ -71,6 +79,7 @@ export const CalendarDaysNames = styled.div`
   margin: 7px 0;
   padding: 0 7px;
 `
+
 export const CalendarDayName = styled.div`
   color: #94A6BE;
   font-size: 10px;
@@ -82,6 +91,7 @@ export const CalendarDayName = styled.div`
     font-size: 14px;
   }
 `
+
 export const CalendarCells = styled.div`
   width: 182px;
   height: 126px;
@@ -96,36 +106,38 @@ export const CalendarCells = styled.div`
     justify-content: space-around;
   }
 `
-export const CalendarCell = styled.div`
-  width: 22px;
-  height: 22px;
-  margin: 2px;
-  border-radius: 50%;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  color: #94A6BE;
-  font-size: 10px;
-  line-height: 1;
-  letter-spacing: -0.2px;
-  cursor: pointer;
 
-  @media screen and (max-width: 660px) {
-    width: 42px;
-    height: 42px;
-    font-size: 14px;
-  }
+// При замене calendar__cell на R.CalendarCell ховер неправильно работает, поэтому оставил
+// export const CalendarCell = styled.div`
+//   width: 22px;
+//   height: 22px;
+//   margin: 2px;
+//   border-radius: 50%;
+//   display: flex;
+//   flex-wrap: nowrap;
+//   align-items: center;
+//   justify-content: center;
+//   color: #94A6BE;
+//   font-size: 10px;
+//   line-height: 1;
+//   letter-spacing: -0.2px;
+//   cursor: pointer;
+
+//   @media screen and (max-width: 660px) {
+//     width: 42px;
+//     height: 42px;
+//     font-size: 14px;
+//   }
+// `
+
+export const CalendarPeriod = styled.div`
+padding: 0 7px;
+
+@media screen and (max-width: 660px){
+    padding: 0;
+}
 `
-// export const CalendarMonth = styled.div`
 
-// `
-// export const CalendarMonth = styled.div`
-
-// `
-// export const CalendarMonth = styled.div`
-
-// `
 
 
 

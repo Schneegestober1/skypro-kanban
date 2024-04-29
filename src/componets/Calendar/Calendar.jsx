@@ -70,9 +70,9 @@ export const Calendar = () => {
                 </R.CalendarContent>
         
                 <input type="hidden" id="datepick_value" value="08.09.2023"/>
-                <div className="calendar__period">
+                <R.CalendarPeriod>
                     <p className="calendar__p date-end">Срок исполнения: <span className="date-control">09.09.23</span></p>
-                </div>
+                </R.CalendarPeriod>
             </R.CalendarBlock>
         </R.Calendar>
     )
