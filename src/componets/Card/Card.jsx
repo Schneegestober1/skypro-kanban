@@ -1,4 +1,4 @@
-import { CardsCard, CardGroup, CardsItem, CardContent, CardDate, CardTheme } from "./card.styled.js"
+import { CardsCard, CardGroup, CardsItem, CardContent, CardDate, CardTheme, CardBtn, CardTitle } from "./card.styled.js"
 
 export const Card = ({topic, date, title}) => {
     const colors = {
@@ -14,16 +14,16 @@ export const Card = ({topic, date, title}) => {
                         <p>{topic}</p>
                     </CardTheme>
                     <a href="#popBrowse" target="_self">
-                        <div className="card__btn">
+                        <CardBtn>
                             <div></div>
                             <div></div>
                             <div></div>
-                        </div>
+                        </CardBtn>
                     </a>
                 </CardGroup>
                 <CardContent>
                     <a href="" target="_blank">
-                        <h3 className="card__title">{title}</h3>
+                        <CardTitle>{title}</CardTitle>
                     </a>
                     <CardDate>
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">

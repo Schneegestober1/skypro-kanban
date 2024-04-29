@@ -78,3 +78,26 @@ export const CardTheme = styled.div`
   line-height: 10px;
 }
 `
+export const CardBtn = styled.div`
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2px;
+
+  div {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #94A6BE;
+}
+`
+
+export const CardTitle = styled.h3`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #000000;
+  margin-bottom: 10px;
+`
