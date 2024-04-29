@@ -2,15 +2,15 @@ import { CardsCard, CardGroup, CardsItem, CardContent, CardDate, CardTheme } fro
 
 export const Card = ({topic, date, title}) => {
     const colors = {
-        'Web Design': '_orange',
-        'Research': '_green',
-        'Copywriting': '_purple', 
+        'Web Design': 'orange',
+        'Research': 'green',
+        'Copywriting': 'purple', 
     }
     return (
         <CardsItem>
             <CardsCard className="card">
                 <CardGroup>
-                    <CardTheme className={`card__theme ${colors[topic]}`}>
+                    <CardTheme $color={colors[topic]}>
                         <p>{topic}</p>
                     </CardTheme>
                     <a href="#popBrowse" target="_self">
