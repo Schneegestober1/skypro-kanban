@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Hover01, Hover03 } from "../../../global.styled";
 
 export const PopExit = styled.div`
   display: none;
@@ -69,6 +70,75 @@ export const PopExitFormGroup = styled.div`
   @media only screen and (max-width: 375px) {
     display: block;
 }
+`
+
+export const PopExitExitYes = styled.button`
+  width: 153px;
+  height: 30px;
+  background-color: #565EEF;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+  color: #FFFFFF;
+  margin-right: 10px;
+
+  a {
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+${Hover01}
+
+  @media only screen and (max-width: 375px) {
+    width: 100%;
+    height: 40px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+`
+
+export const PopExitExitNo = styled.button`
+  width: 153px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 0.7px solid var(--palette-navy-60, #565EEF);
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+  color: #FFFFFF;
+
+  a {
+  width: 100%;
+  height: 100%;
+  color: #565EEF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  ${Hover03}
+
+  @media only screen and (max-width: 375px) {
+    width: 100%;
+    height: 40px;
+  }
 `
 
 

@@ -1,4 +1,4 @@
-import { PopExit, PopExitBlock, PopExitContainer, PopExitFormGroup, PopExitTtl, PopExitTtlH2 } from "./popUser.styled"
+import { PopExit, PopExitBlock, PopExitContainer, PopExitExitNo, PopExitExitYes, PopExitFormGroup, PopExitTtl, PopExitTtlH2 } from "./popUser.styled"
 
 export const PopUSer= () => {
     return (
@@ -10,8 +10,8 @@ export const PopUSer= () => {
 						</PopExitTtl>
 						<form className="pop-exit__form" id="formExit" action="#">
 							<PopExitFormGroup>
-								<button className="pop-exit__exit-yes _hover01" id="exitYes"><a href="modal/signin.html">Да, выйти</a> </button>
-								<button className="pop-exit__exit-no _hover03" id="exitNo"><a href="main.html">Нет, остаться</a> </button>
+								<PopExitExitYes id="exitYes"><a href="modal/signin.html">Да, выйти</a> </PopExitExitYes>
+								<PopExitExitNo id="exitNo"><a href="main.html">Нет, остаться</a> </PopExitExitNo>
 							</PopExitFormGroup>
 						</form>
 					</PopExitBlock>
