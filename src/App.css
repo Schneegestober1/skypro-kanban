@@ -375,10 +375,12 @@
   font-weight: 600;
 }
 
-
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar__content {
   margin-bottom: 12px;
 }
+
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar__days-names {
   display: flex;
   flex-wrap: nowrap;
@@ -387,6 +389,8 @@
   margin: 7px 0;
   padding: 0 7px;
 }
+
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar__day-name {
   color: #94A6BE;
   font-size: 10px;
@@ -394,12 +398,16 @@
   line-height: normal;
   letter-spacing: -0.2px;
 }
+
+/* Также используется в PopNewCard, пока не удлаяю*/
 .calendar__cells {
   width: 182px;
   height: 126px;
   display: flex;
   flex-wrap: wrap;
 }
+
+
 .calendar__cell {
   width: 22px;
   height: 22px;
@@ -431,11 +439,15 @@
   padding: 0 7px;
 }
 
+/* Также используется в PopNewCard, пока не удлаяю*/
 .nav__actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+
+/* Также используется в PopNewCard, пока не удлаяю*/
 .nav__action {
   width: 18px;
   height: 25px;
@@ -447,6 +459,8 @@
 .nav__action svg {
   fill: #94A6BE;
 }
+
+
 
 ._other-month {
   opacity: 0;
@@ -914,7 +928,7 @@
 
   /* Не тогать */
 
-
+/* Также используется в PopNewCard, пока не удлаяю*/
   .calendar {
     max-width: 340px;
     width: 100%;
@@ -944,7 +958,7 @@
     height: 42px;
     font-size: 14px;
   }
-
+/* Также используется в PopNewCard, пока не удлаяю*/
 
    /* Не тогать */
 
