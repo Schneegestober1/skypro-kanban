@@ -1,21 +1,23 @@
+import { Container } from "../../global.styled"
 import { Column } from "../Column/Column"
+import * as S from './main.styled.js'
 
 export const Main = ({cards, isLoading}) => {
     return (
-        <main className="main"> 
-            <div className="container">
-                <div className="main__block">
+        <S.Main> 
+            <Container>
+                <S.MainBlock>
                     {isLoading ? 'Loading .....' : (
-                        <div className="main__content">
+                        <S.MainContent>
                         <Column title={'Без статуса'} cards={cards.filter(el => el.status === 'Без статуса')}/>				
                         <Column title={'Нужно сделать'} cards={cards.filter(el => el.status === 'Нужно сделать')}/>				
                         <Column title={'В работе'} cards={cards.filter(el => el.status === 'В работе')}/>				
                         <Column title={'Тестирование'} cards={cards.filter(el => el.status === 'Тестирование')}/>				
                         <Column title={'Готово'} cards={cards.filter(el => el.status === 'Готово')}/>				
-                    </div>
+                    </S.MainContent>
                     )}
-                </div>
-            </div>
-        </main>
+                </S.MainBlock>
+            </Container>
+        </S.Main>
     )
 }

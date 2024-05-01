@@ -1,14 +1,16 @@
 import { Card } from "../Card/Card"
+import { Cards } from "../Card/card.styled"
+import { ColumnTitle, MainColumn } from "./column.styled"
 
 export const Column = ({title, cards}) => {
     return (
-        <div className="main__column column">
-            <div className="column__title">
+        <MainColumn className="column">
+            <ColumnTitle>
                 <p>{title}</p>
-            </div>
-            <div className="cards">
+            </ColumnTitle>
+            <Cards>
                 {cards.map(el => <Card key={el.id} date={el.date} topic={el.topic} title={el.title} />)}
-            </div>
-        </div>	
+            </Cards>
+        </MainColumn>	
     )
 }

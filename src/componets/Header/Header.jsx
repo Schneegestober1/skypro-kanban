@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Container } from "../../global.styled.js";
+import * as S from './header.styled.js'
 
 export const Header = ({addCard}) => {
 	const [isOpenedModalUserWindow, setIsOpenedModalUserWindow] = useState(false);
@@ -9,18 +11,18 @@ export const Header = ({addCard}) => {
 	}
 
     return (
-        <header className="header">
-			<div className="container">
-				<div className="header__block">
-					<div className="header__logo _show _light">
+        <S.Header>
+			<Container>
+				<S.HeaderBlock>
+					<S.HeaderLogo>
 						<a href="" target="_self"><img src="/img/logo.png" alt="logo"/></a>
-					</div>
-					<div className="header__logo _dark">
-						<a href="" target="_self"><img src="/img/logo_dark.png'" alt="logo"/></a>
-					</div>
-					<nav className="header__nav">
-						<button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></button>
-						<a href="#user-set-target" className="header__user _hover02" onClick={(event) => handlerOpenModalWindow(event)}>Ivan Ivanov</a>
+					</S.HeaderLogo>
+					<S.HeaderLogo>
+						<a href="" target="_self"><img src="/img/logo_dark.png" alt="logo"/></a>
+					</S.HeaderLogo>
+					<S.HeaderNav>
+						<S.HeaderBtnMainNew id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></S.HeaderBtnMainNew>
+						<S.HeaderUser href="#user-set-target" onClick={(event) => handlerOpenModalWindow(event)}>Ivan Ivanov</S.HeaderUser>
 							{isOpenedModalUserWindow && (
 								<div className="header__pop-user-set pop-user-set" id="user-set-target">
 									<p className="pop-user-set__name">Ivan Ivanov</p>
@@ -32,9 +34,9 @@ export const Header = ({addCard}) => {
 									<button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
 								</div>
 							)}
-					</nav>					
-				</div>
-			</div>			
-		</header>
+					</S.HeaderNav>					
+				</S.HeaderBlock>
+			</Container>			
+		</S.Header>
     )
 }
