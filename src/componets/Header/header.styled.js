@@ -23,7 +23,15 @@ export const HeaderBlock = styled.div`
 // width: 85px;
 // `
 
-export const HeaderLogo = styled.div`
+export const HeaderLogoLight = styled.div`
+display: ${({theme}) => !theme.isDark ? 'block' : 'none'};
+img {
+  width: 85px;
+}
+`
+
+export const HeaderLogoDark = styled.div`
+display: ${({theme}) => theme.isDark ? 'block' : 'none'};
 img {
   width: 85px;
 }

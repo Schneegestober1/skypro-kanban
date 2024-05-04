@@ -42,9 +42,9 @@ function App() {
 		<GlobalStyle/>
 		<Wrapper>
 			{/* pop-up start */}
-			<PopUser/>
-			<PopNewCard/>
 			<PopBrowse/>
+			<PopNewCard/>
+			<PopUser/>
 			{/* pop-up end */}
 			<Header globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
 			<Main isLoading={isLoading} cards={cards}/>	

@@ -15,12 +15,12 @@ export const Header = ({addCard, globalTheme, setGlobalTheme}) => {
         <S.Header>
 			<Container>
 				<S.HeaderBlock>
-					<S.HeaderLogo>
+					<S.HeaderLogoLight>
 						<a href="" target="_self"><img src="/img/logo.png" alt="logo"/></a>
-					</S.HeaderLogo>
-					<S.HeaderLogo>
+					</S.HeaderLogoLight>
+					<S.HeaderLogoDark>
 						<a href="" target="_self"><img src="/img/logo_dark.png" alt="logo"/></a>
-					</S.HeaderLogo>
+					</S.HeaderLogoDark>
 					<S.HeaderNav>
 						<S.HeaderBtnMainNew id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></S.HeaderBtnMainNew>
 						<S.HeaderUser href="#user-set-target" onClick={(event) => handlerOpenModalWindow(event)}>Ivan Ivanov</S.HeaderUser>
