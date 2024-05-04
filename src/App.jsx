@@ -35,7 +35,7 @@ function App() {
 		setTimeout(() => {
 			setIsLoading(false)
 		}, 500)
-	}, [cards])
+	}, [])
 
   return (
 	<ThemeProvider theme={globalTheme ? lightTheme : darkTheme}>
