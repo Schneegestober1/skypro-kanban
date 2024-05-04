@@ -6,7 +6,9 @@ import { PopBrowse } from './componets/Popups/PopBrowse/PopBrowse.jsx'
 import { PopNewCard } from './componets/Popups/PopNewCard/PopNewCard.jsx'
 import { PopUser } from './componets/Popups/Popuser/PopUser.jsx'
 import { tasks } from './data.js'
-import { Wrapper } from './global.styled.js'
+import { GlobalStyle, Wrapper } from './global.styled.js'
+import { ThemeProvider } from 'styled-components'
+import { darkTheme, lightTheme } from './themeStyle.styled.js'
 
 
 function App() {
@@ -27,7 +29,6 @@ function App() {
 		)
 	}
 
-
 	useEffect(() => {
 		setIsLoading(true)
 		setTimeout(() => {
@@ -35,17 +36,19 @@ function App() {
 		}, 500)
 	}, [cards])
 
-
   return (
-	<Wrapper>
-		{/* pop-up start */}
-		<PopUser/>
-		<PopNewCard/>
-		<PopBrowse/>
-		{/* pop-up end */}
-		<Header addCard={addCard}/>
-		<Main isLoading={isLoading} cards={cards}/>	
-	</Wrapper>
+	<ThemeProvider theme={darkTheme}>
+		<GlobalStyle/>
+		<Wrapper>
+			{/* pop-up start */}
+			<PopUser/>
+			<PopNewCard/>
+			<PopBrowse/>
+			{/* pop-up end */}
+			<Header addCard={addCard}/>
+			<Main isLoading={isLoading} cards={cards}/>	
+		</Wrapper>
+	</ThemeProvider>
   )
 }
 export default App

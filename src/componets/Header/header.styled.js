@@ -4,7 +4,7 @@ import { Hover01, Hover02 } from "../../global.styled";
 export const Header = styled.header`
   width: 100%;
   margin: 0 auto;
-  background-color: #FFFFFF;
+  background-color: ${({theme}) => theme.primary};
 `
 
 export const HeaderBlock = styled.div`
@@ -64,7 +64,7 @@ export const HeaderUser = styled.a`
   justify-content: center;
   font-size: 14px;
   line-height: 20px;
-  color: #565EEF;
+  color: ${({theme}) => theme.text2};
 
   &::after {
   content: "";
@@ -72,8 +72,8 @@ export const HeaderUser = styled.a`
   width: 6px;
   height: 6px;
   border-radius: 1px;
-  border-left: 1.9px solid #565EEF;
-  border-bottom: 1.9px solid #565EEF;
+  border-left: 1.9px solid ${({theme}) => theme.primary};
+  border-bottom: 1.9px solid ${({theme}) => theme.primary};
   transform: rotate(-45deg);
   margin: -6px 0 0 5px;
   padding: 0;
