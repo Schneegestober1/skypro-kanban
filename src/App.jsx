@@ -4,14 +4,17 @@ import { Header } from './componets/Header/Header.jsx'
 import { Main } from './componets/Main/Main.jsx'
 import { PopBrowse } from './componets/Popups/PopBrowse/PopBrowse.jsx'
 import { PopNewCard } from './componets/Popups/PopNewCard/PopNewCard.jsx'
-import { PopUSer } from './componets/Popups/Popuser/PopUser.jsx'
+import { PopUser } from './componets/Popups/Popuser/PopUser.jsx'
 import { tasks } from './data.js'
-import { Wrapper } from './global.styled.js'
+import { GlobalStyle, Wrapper } from './global.styled.js'
+import { ThemeProvider } from 'styled-components'
+import { darkTheme, lightTheme } from './themeStyle.styled.js'
 
 
 function App() {
 	const [cards, setCards] = useState(tasks);
 	const [isLoading, setIsLoading] = useState(false)
+	const [globalTheme, setGlobalTheme] = useState(true)
 
 	const addCard = (event) => {
 		event.preventDefault()
@@ -27,25 +30,26 @@ function App() {
 		)
 	}
 
-
 	useEffect(() => {
 		setIsLoading(true)
 		setTimeout(() => {
 			setIsLoading(false)
 		}, 500)
-	}, [cards])
-
+	}, [])
 
   return (
-	<Wrapper>
-		{/* pop-up start */}
-		<PopUSer/>
-		<PopNewCard/>
-		<PopBrowse/>
-		{/* pop-up end */}
-		<Header addCard={addCard}/>
-		<Main isLoading={isLoading} cards={cards}/>	
-	</Wrapper>
+	<ThemeProvider theme={globalTheme ? lightTheme : darkTheme}>
+		<GlobalStyle/>
+		<Wrapper>
+			{/* pop-up start */}
+			<PopBrowse/>
+			<PopNewCard/>
+			<PopUser/>
+			{/* pop-up end */}
+			<Header globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
+			<Main isLoading={isLoading} cards={cards}/>	
+		</Wrapper>
+	</ThemeProvider>
   )
 }
 export default App
