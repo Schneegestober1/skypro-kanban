@@ -1,6 +1,6 @@
 import { PopExit, PopExitBlock, PopExitContainer, PopExitExitNo, PopExitExitYes, PopExitFormGroup, PopExitTtl, PopExitTtlH2 } from "./popUser.styled"
 
-export const PopUSer= () => {
+export const PopUser= () => {
     return (
         <PopExit id="popExit"> 
 				<PopExitContainer>

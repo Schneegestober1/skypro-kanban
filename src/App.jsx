@@ -4,7 +4,7 @@ import { Header } from './componets/Header/Header.jsx'
 import { Main } from './componets/Main/Main.jsx'
 import { PopBrowse } from './componets/Popups/PopBrowse/PopBrowse.jsx'
 import { PopNewCard } from './componets/Popups/PopNewCard/PopNewCard.jsx'
-import { PopUSer } from './componets/Popups/Popuser/PopUser.jsx'
+import { PopUser } from './componets/Popups/Popuser/PopUser.jsx'
 import { tasks } from './data.js'
 import { Wrapper } from './global.styled.js'
 
@@ -39,7 +39,7 @@ function App() {
   return (
 	<Wrapper>
 		{/* pop-up start */}
-		<PopUSer/>
+		<PopUser/>
 		<PopNewCard/>
 		<PopBrowse/>
 		{/* pop-up end */}
