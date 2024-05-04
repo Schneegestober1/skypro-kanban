@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import { GlobalStyle} from './global.styled.js'
 import { ThemeProvider } from 'styled-components'
 import { darkTheme, lightTheme } from './themeStyle.styled.js'
 import { Route, Routes } from 'react-router-dom'
-
+import { MainPage } from './pages/MainPage/MainPage.jsx'
+import { GlobalStyle } from './global.styled.js'
 
 function App() {
 
@@ -14,9 +14,8 @@ function App() {
 	<ThemeProvider theme={globalTheme ? lightTheme : darkTheme}>
 		<GlobalStyle/>
 		<Routes>
-			<Route path={''} element={''}></Route>
-		</Routes>
-		
+			<Route path={'/'} element={<MainPage globalTheme={globalTheme} setGlobalTheme={setGlobalTheme}/>}/>	
+		</Routes>	
 	</ThemeProvider>
   )
 }

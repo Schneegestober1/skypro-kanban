@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { tasks } from './data.js'
-import { Main } from "../../componets/Main/main.styled";
-import { Wrapper } from "../../global.styled";
-import { Header } from './componets/Header/Header.jsx'
-import { PopBrowse } from './componets/Popups/PopBrowse/PopBrowse.jsx'
-import { PopNewCard } from './componets/Popups/PopNewCard/PopNewCard.jsx'
-import { PopUser } from './componets/Popups/Popuser/PopUser.jsx'
+import { Main } from "../../componets/Main/main.styled.js";
+import { Wrapper } from "../../global.styled.js";
+import { tasks } from "../../data.js";
+import { Header } from "../../componets/Header/header.styled.js";
+import { PopBrowse } from "../../componets/Popups/PopBrowse/PopBrowse.jsx";
+import { PopNewCard } from "../../componets/Popups/PopNewCard/PopNewCard.jsx";
+import { PopUser } from "../../componets/Popups/Popuser/PopUser.jsx";
 
-export const MainPage = () => {
+export const MainPage = ({globalTheme, setGlobalTheme}) => {
     const [cards, setCards] = useState(tasks);
 	const [isLoading, setIsLoading] = useState(false)
 
