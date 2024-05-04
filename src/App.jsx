@@ -14,6 +14,7 @@ import { darkTheme, lightTheme } from './themeStyle.styled.js'
 function App() {
 	const [cards, setCards] = useState(tasks);
 	const [isLoading, setIsLoading] = useState(false)
+	const [globalTheme, setGlobalTheme] = useState(true)
 
 	const addCard = (event) => {
 		event.preventDefault()
@@ -37,7 +38,7 @@ function App() {
 	}, [cards])
 
   return (
-	<ThemeProvider theme={darkTheme}>
+	<ThemeProvider theme={globalTheme ? lightTheme : darkTheme}>
 		<GlobalStyle/>
 		<Wrapper>
 			{/* pop-up start */}
@@ -45,7 +46,7 @@ function App() {
 			<PopNewCard/>
 			<PopBrowse/>
 			{/* pop-up end */}
-			<Header addCard={addCard}/>
+			<Header globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
 			<Main isLoading={isLoading} cards={cards}/>	
 		</Wrapper>
 	</ThemeProvider>

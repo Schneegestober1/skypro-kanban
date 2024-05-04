@@ -2,7 +2,8 @@ import { useState } from "react"
 import { Container } from "../../global.styled.js";
 import * as S from './header.styled.js'
 
-export const Header = ({addCard}) => {
+
+export const Header = ({addCard, globalTheme, setGlobalTheme}) => {
 	const [isOpenedModalUserWindow, setIsOpenedModalUserWindow] = useState(false);
 
 	function handlerOpenModalWindow(event) {
@@ -29,7 +30,7 @@ export const Header = ({addCard}) => {
 									<p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
 									<div className="pop-user-set__theme">
 										<p>Темная тема</p>
-										<input type="checkbox" className="checkbox" name="checkbox"/>
+										<input type="checkbox" className="checkbox" name="checkbox" onChange={()=> setGlobalTheme(!globalTheme)}/>
 									</div>
 									<button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
 								</div>
