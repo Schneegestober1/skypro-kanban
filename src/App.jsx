@@ -9,8 +9,7 @@ import {AppRoutes} from "./AppRoutes.jsx";
 
 
 function App() {
-	const [globalTheme, setGlobalTheme] = useState(true)
-
+  const [globalTheme, setGlobalTheme] = useState(true)
 
   return (
 	<ThemeProvider theme={globalTheme ? lightTheme : darkTheme}>
