@@ -25,11 +25,11 @@ export const LoginPage = () => {
                                    placeholder="Эл. почта"/>
                             <ModalInput type="password" name="password" id="formpassword"
                                    placeholder="Пароль"/>
-                            <ModalBtn id="btnEnter"><Link to={paths.REGISTER}>Войти</Link>
+                            <ModalBtn id="btnEnter"><Link to={paths.MAIN}>Войти</Link>
                             </ModalBtn>
                             <ModalFormGroup>
                                 <p>Нужно зарегистрироваться?</p>
-                                <Link>Регистрируйтесь здесь</Link>
+                                <Link to={paths.REGISTER}>Регистрируйтесь здесь</Link>
                             </ModalFormGroup>
                         </ModalFormLoginR>
                     </ModalBlock>
