@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Hover01} from "../../global.styled.js";
 
-export const ContainerSignUp = styled.div`
+export const ContainerSign = styled.div`
     display: block;
     width: 100vw;
     min-height: 100vh;

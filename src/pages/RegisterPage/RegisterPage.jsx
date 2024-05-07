@@ -1,7 +1,7 @@
 import {
-    ContainerSignUp,
+    ContainerSign,
     Modal,
-    ModalBlock, ModalBtn, ModalBtnSignUpEnt, ModalFormGroup,
+    ModalBlock, ModalBtn, ModalFormGroup,
     ModalFormLogin,
     ModalInput,
     ModalTtl
@@ -11,7 +11,7 @@ import {Wrapper} from "../../global.styled.js";
 export const RegisterPage = () => {
     return (
         <Wrapper>
-            <ContainerSignUp>
+            <ContainerSign>
                 <Modal>
                     <ModalBlock>
                         <ModalTtl>
@@ -33,7 +33,7 @@ export const RegisterPage = () => {
                         </ModalFormLogin>
                     </ModalBlock>
                 </Modal>
-            </ContainerSignUp>
+            </ContainerSign>
         </Wrapper>
     )
 }

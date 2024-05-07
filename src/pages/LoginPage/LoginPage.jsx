@@ -1,7 +1,7 @@
 import {Wrapper} from "../../global.styled.js";
 import { ModalFormLoginR} from "./loginPage.styled.js";
 import {
-    ContainerSignUp,
+    ContainerSign,
     Modal,
     ModalBlock,
     ModalBtn, ModalFormGroup,
@@ -12,7 +12,7 @@ import {
 export const LoginPage = () => {
     return (
         <Wrapper>
-            <ContainerSignUp>
+            <ContainerSign>
                 <Modal>
                     <ModalBlock>
                         <ModalTtl>
@@ -32,7 +32,7 @@ export const LoginPage = () => {
                         </ModalFormLoginR>
                     </ModalBlock>
                 </Modal>
-            </ContainerSignUp>
+            </ContainerSign>
         </Wrapper>
     )
 }
