@@ -1,13 +1,13 @@
 import {Wrapper} from "../../global.styled.js";
+import { ModalFormLoginR} from "./loginPage.styled.js";
 import {
     ContainerSignUp,
     Modal,
     ModalBlock,
-    ModalBtnSignUpEnt, ModalFormGroup,
-    ModalFormLogin,
+    ModalBtn, ModalFormGroup,
     ModalInput,
     ModalTtl
-} from "./loginPage.styled.js";
+} from "../RegisterPage/registerPage.styled.js";
 
 export const LoginPage = () => {
     return (
@@ -16,22 +16,20 @@ export const LoginPage = () => {
                 <Modal>
                     <ModalBlock>
                         <ModalTtl>
-                            <h2>Регистрация</h2>
+                            <h2>Вход</h2>
                         </ModalTtl>
-                        <ModalFormLogin id="formLogUp" action="#">
-                            <ModalInput className="first-name" type="text" name="first-name" id="first-name"
-                                   placeholder="Имя"/>
-                            <ModalInput className="login" type="text" name="login" id="loginReg"
+                        <ModalFormLoginR id="formLogIn" action="#">
+                            <ModalInput type="text" name="login" id="formlogin"
                                    placeholder="Эл. почта"/>
-                            <ModalInput className="password-first" type="password" name="password"
-                                   id="passwordFirst" placeholder="Пароль"/>
-                            <ModalBtnSignUpEnt id="SignUpEnter"><a
-                                href="#">Зарегистрироваться</a></ModalBtnSignUpEnt>
+                            <ModalInput type="password" name="password" id="formpassword"
+                                   placeholder="Пароль"/>
+                            <ModalBtn id="btnEnter"><a href="">Войти</a>
+                            </ModalBtn>
                             <ModalFormGroup>
-                                <p>Уже есть аккаунт?</p>
-                                <a href="#">Войдите здесь</a>
+                                <p>Нужно зарегистрироваться?</p>
+                                <a href="">Регистрируйтесь здесь</a>
                             </ModalFormGroup>
-                        </ModalFormLogin>
+                        </ModalFormLoginR>
                     </ModalBlock>
                 </Modal>
             </ContainerSignUp>
