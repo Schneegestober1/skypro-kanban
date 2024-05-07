@@ -89,6 +89,7 @@ export const ModalInput = styled.input`
         line-height: 21px;
         letter-spacing: -0.28px;
         color: #94A6BE;
+    }
     ::placeholder {
         font-family: "Roboto", sans-serif;
         font-weight: 400;
@@ -96,6 +97,7 @@ export const ModalInput = styled.input`
         line-height: 21px;
         letter-spacing: -0.28px;
         color: #94A6BE;    
+    }
 `
 export const ModalBtn = styled.button`
     width: 100%;

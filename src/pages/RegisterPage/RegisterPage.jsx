@@ -7,6 +7,8 @@ import {
     ModalTtl
 } from "./registerPage.styled.js";
 import {Wrapper} from "../../global.styled.js";
+import { Link } from "react-router-dom";
+import { paths } from "../../routesPaths.js";
 
 export const RegisterPage = () => {
     return (
@@ -24,11 +26,10 @@ export const RegisterPage = () => {
                                         placeholder="Эл. почта"/>
                             <ModalInput className="password-first" type="password" name="password"
                                         id="passwordFirst" placeholder="Пароль"/>
-                            <ModalBtn id="SignUpEnter"><a
-                                href="#">Зарегистрироваться</a></ModalBtn>
+                            <ModalBtn id="SignUpEnter"><Link to={paths.LOGIN} >Зарегистрироваться</Link></ModalBtn>
                             <ModalFormGroup>
                                 <p>Уже есть аккаунт?</p>
-                                <a href="#">Войдите здесь</a>
+                                <Link>Войдите здесь</Link>
                             </ModalFormGroup>
                         </ModalFormLogin>
                     </ModalBlock>
