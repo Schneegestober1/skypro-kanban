@@ -1,5 +1,5 @@
 export const RegisterPage = () => {
     return (
-        <h1>Register Page</h1>
+        <h1>Саня хуй</h1>
     )
 }
