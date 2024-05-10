@@ -8,10 +8,20 @@ import {
     ModalInput,
     ModalTtl
 } from "../RegisterPage/registerPage.styled.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { paths } from "../../routesPaths.js";
 
-export const LoginPage = () => {
+export const LoginPage = ({setIsAuth}) => {
+
+    // 1:00:09
+
+    const navigate = useNavigate()
+
+    const LoginHandler = () => {
+        setIsAuth(true)
+        navigate(paths.MAIN)
+    }
+
     return (
         <Wrapper>
             <ContainerSign>
@@ -25,8 +35,7 @@ export const LoginPage = () => {
                                    placeholder="Эл. почта"/>
                             <ModalInput type="password" name="password" id="formpassword"
                                    placeholder="Пароль"/>
-                            <ModalBtn id="btnEnter"><Link to={paths.MAIN}>Войти</Link>
-                            </ModalBtn>
+                            <ModalBtn onClick={LoginHandler} id="btnEnter">Войти</ModalBtn>
                             <ModalFormGroup>
                                 <p>Нужно зарегистрироваться?</p>
                                 <Link to={paths.REGISTER}>Регистрируйтесь здесь</Link>
