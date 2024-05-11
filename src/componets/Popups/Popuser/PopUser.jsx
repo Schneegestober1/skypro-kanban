@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom"
 import { PopExit, PopExitBlock, PopExitContainer, PopExitExitNo, PopExitExitYes, PopExitFormGroup, PopExitTtl, PopExitTtlH2 } from "./popUser.styled"
+import { paths } from "../../../routesPaths"
 
 export const PopUser= () => {
     return (
@@ -10,8 +12,8 @@ export const PopUser= () => {
 						</PopExitTtl>
 						<form className="pop-exit__form" id="formExit" action="#">
 							<PopExitFormGroup>
-								<PopExitExitYes id="exitYes"><a href="modal/signin.html">Да, выйти</a> </PopExitExitYes>
-								<PopExitExitNo id="exitNo"><a href="main.html">Нет, остаться</a> </PopExitExitNo>
+								<PopExitExitYes id="exitYes"><Link to={paths.LOGIN}>Да, выйти</Link></PopExitExitYes>
+								<PopExitExitNo id="exitNo"><Link to={paths.MAIN}>Нет, остаться</Link></PopExitExitNo>
 							</PopExitFormGroup>
 						</form>
 					</PopExitBlock>

@@ -6,6 +6,7 @@ import { paths } from "./routesPaths.js";
 import PrivateRoute from "./PriviteRoutes.jsx";
 import { useState } from "react";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage.jsx";
+import { PopUser } from "./componets/Popups/Popuser/PopUser.jsx";
 
 export const AppRoutes = ({globalTheme, setGlobalTheme}) => {
     const [isAuth, setIsAuth] = useState(true)
@@ -13,7 +14,9 @@ export const AppRoutes = ({globalTheme, setGlobalTheme}) => {
     return (
         <Routes>
             <Route element={<PrivateRoute isAuth={isAuth}/>}>
-                <Route path={paths.MAIN} element={<MainPage globalTheme={globalTheme} setGlobalTheme={setGlobalTheme}/>}/> 
+                <Route path={paths.MAIN} element={<MainPage globalTheme={globalTheme} setGlobalTheme={setGlobalTheme}/>}>
+                    <Route path={paths.EXIT} element={<PopUser/>}/>
+                </Route>
             </Route>
             <Route path={paths.LOGIN} element={<LoginPage setIsAuth={setIsAuth}/>}/>
             <Route path={paths.REGISTER} element={<RegisterPage/>}/>
