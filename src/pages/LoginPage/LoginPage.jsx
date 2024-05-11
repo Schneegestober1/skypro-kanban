@@ -13,15 +13,12 @@ import { paths } from "../../routesPaths.js";
 
 export const LoginPage = ({setIsAuth}) => {
 
-    // 1:00:09
-
     const navigate = useNavigate()
 
     const LoginHandler = () => {
         setIsAuth(true)
         navigate(paths.MAIN)
     }
-
     return (
         <Wrapper>
             <ContainerSign>
