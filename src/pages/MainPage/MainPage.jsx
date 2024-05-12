@@ -2,7 +2,6 @@ import {Main} from "../../componets/Main/Main.jsx";
 import {useEffect, useState} from "react";
 import {tasks} from "../../data.js";
 import {Wrapper} from "../../global.styled.js";
-import {PopBrowse} from "../../componets/Popups/PopBrowse/PopBrowse.jsx";
 import {PopNewCard} from "../../componets/Popups/PopNewCard/PopNewCard.jsx";
 import {Header} from "../../componets/Header/Header.jsx";
 import { Outlet } from "react-router-dom";
@@ -36,13 +35,11 @@ export const MainPage = ({globalTheme, setGlobalTheme}) => {
     return(
         <Wrapper>
             {/* pop-up start */}
-            <PopBrowse/>
+            <Outlet/>
             <PopNewCard/>
-
             {/* pop-up end */}
             <Header globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
             <Main isLoading={isLoading} cards={cards}/>
-            <Outlet/>
         </Wrapper>
     )
 }
