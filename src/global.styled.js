@@ -98,3 +98,12 @@ export const Hover03 = css`
   color: #FFFFFF;
 }
 `
+
+export const BtnBg = css`
+  border-radius: 4px;
+  background: #565EEF;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+
+`

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
 import { Calendar } from "../../Calendar/Calendar.jsx"
 import { paths } from "../../../routesPaths.js"
+import { BtnBrowse, BtnLink } from "./popBrowse.styled.js"
 
 export const PopBrowse = () => {
     
@@ -55,7 +55,7 @@ export const PopBrowse = () => {
                                 <button className="btn-browse__edit _btn-bor _hover03"><a href="#">Редактировать задачу</a></button>
                                 <button className="btn-browse__delete _btn-bor _hover03"><a href="#">Удалить задачу</a></button>
                             </div>
-                            <button className="btn-browse__close _btn-bg _hover01"><Link to={paths.MAIN}>Закрыть</Link></button>
+                            <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
                         </div>
                         <div className="pop-browse__btn-edit _hide">
                             <div className="btn-group">
