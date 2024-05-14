@@ -105,5 +105,4 @@ export const BtnBg = css`
   border: none;
   outline: none;
   color: #FFFFFF;
-
 `

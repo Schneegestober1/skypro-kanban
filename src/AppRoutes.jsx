@@ -10,13 +10,13 @@ import { PopBrowsePage } from "./pages/PopUps/PopBrowse/PopBrowsePage.jsx";
 import { PopExitPage } from "./pages/PopUps/ExitPage/PopExitPage.jsx";
 
 export const AppRoutes = ({globalTheme, setGlobalTheme}) => {
-    const [isAuth, setIsAuth] = useState(true)
-    // 1:25:19
+    const [isAuth, setIsAuth] = useState(false)
+
     return (
         <Routes>
             <Route element={<PrivateRoute isAuth={isAuth}/>}>
                 <Route path={paths.MAIN} element={<MainPage globalTheme={globalTheme} setGlobalTheme={setGlobalTheme}/>}>
-                    <Route path={paths.EXIT} element={<PopExitPage/>}/>
+                    <Route path={paths.EXIT} element={<PopExitPage setIsAuth={setIsAuth}/>}/>
                     <Route path={paths.CARD_ID} element={<PopBrowsePage/>}/>
                 </Route>
             </Route>

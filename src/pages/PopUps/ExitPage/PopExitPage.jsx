@@ -1,7 +1,7 @@
 import { PopUser } from "../../../componets/Popups/Popuser/PopUser"
 
-export const PopExitPage = () => {
+export const PopExitPage = ({setIsAuth}) => {
     return (
-        <PopUser/>
+        <PopUser setIsAuth={setIsAuth}/>
     )
 }

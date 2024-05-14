@@ -38,7 +38,7 @@ export const MainPage = ({globalTheme, setGlobalTheme}) => {
             <Outlet/>
             <PopNewCard/>
             {/* pop-up end */}
-            <Header globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
+            <Header set globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
             <Main isLoading={isLoading} cards={cards}/>
         </Wrapper>
     )
