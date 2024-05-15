@@ -8,8 +8,7 @@ export const Card = ({card}) => {
         'Research': 'green',
         'Copywriting': 'purple', 
     }
-
-    console.log(card);
+    
     return (
         <CardsItem>
             <CardsCard className="card">

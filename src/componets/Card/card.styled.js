@@ -78,6 +78,8 @@ export const CardDate = styled.div`
  }
 `
 
+// 02:02:00
+
 const color = {
   orange: 'background-color: #FFE4C2; color: #FF6D00;',
   green: 'background-color: #B4FDD1; color: #06B16E;',

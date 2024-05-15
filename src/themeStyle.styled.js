@@ -12,4 +12,5 @@ export const lightTheme = {
     text: '#000',
     text2: '#565EEF',
     isDark: false,
+    
 }       
