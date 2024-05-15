@@ -80,8 +80,8 @@ export const HeaderUser = styled.a`
   width: 6px;
   height: 6px;
   border-radius: 1px;
-  border-left: 1.9px solid ${({theme}) => theme.primary};
-  border-bottom: 1.9px solid ${({theme}) => theme.primary};
+  border-left: 1.9px solid ${({theme}) => theme.text2};
+  border-bottom: 1.9px solid ${({theme}) => theme.text2};
   transform: rotate(-45deg);
   margin: -6px 0 0 5px;
   padding: 0;

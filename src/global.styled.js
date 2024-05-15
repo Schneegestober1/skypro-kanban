@@ -99,7 +99,26 @@ export const Hover03 = css`
 }
 `
 
+const orange = css`
+background-color: ${({theme}) => theme.orangeBg}; 
+color: ${({theme}) => theme.orangeText};
+`
 
+const green = css`
+background-color: ${({theme}) => theme.greenBg}; 
+color: ${({theme}) => theme.greenText};
+`
+
+const purple = css`
+background-color: ${({theme}) => theme.purpleBg}; 
+color: ${({theme}) => theme.purpleText};
+`
+
+export const colorTheme = (color) => css`
+${color === 'orange' && orange} 
+${color === 'green' && green} 
+${color === 'purple' && purple} 
+`
 
 export const BtnBg = css`
   border-radius: 4px;
