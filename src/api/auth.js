@@ -4,9 +4,20 @@ export const register =({login, name, password}) => {
     return fetch( url, {
         method: 'POST',
         body: JSON.stringify({
-            login: login,
-            name: name,
-            password: password,
+            login,
+            name,
+            password,
         })
-    }).then((response) => response.json()).then(response => response)
+    }).then((response) => {
+        if(response.status === 400) {
+            throw new Error('Пользователь с таким логином уже существует')
+        }
+        if(response.status === 500) {
+            throw new Error('Ошибка сервера')
+        }
+        if(!response.ok){
+            throw new Error('Что-то пошло не так')
+        }
+        return response.json()
+    })
 }
