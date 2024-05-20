@@ -21,3 +21,24 @@ export const register =({login, name, password}) => {
         return response.json()
     })
 }
+
+export const signIn =({login, password}) => {
+    return fetch( url, {
+        method: 'POST',
+        body: JSON.stringify({
+            login,
+            password,
+        })
+    }).then((response) => {
+        if(response.status === 400) {
+            throw new Error('Такого пользователья не существует:(')
+        }
+        if(response.status === 500) {
+            throw new Error('Ошибка сервера')
+        }
+        if(!response.ok){
+            throw new Error('Что-то пошло не так')
+        }
+        return response.json()
+    })
+}
