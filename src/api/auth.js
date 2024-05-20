@@ -23,7 +23,7 @@ export const register =({login, name, password}) => {
 }
 
 export const signIn =({login, password}) => {
-    return fetch( url, {
+    return fetch( url + '/login', {
         method: 'POST',
         body: JSON.stringify({
             login,

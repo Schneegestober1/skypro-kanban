@@ -7,7 +7,7 @@ import {Header} from "../../componets/Header/Header.jsx";
 import { Outlet } from "react-router-dom";
 
 
-export const MainPage = ({globalTheme, setGlobalTheme}) => {
+export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
     const [cards, setCards] = useState(tasks)
     const [isLoading, setIsLoading] = useState(false)
 
@@ -38,7 +38,7 @@ export const MainPage = ({globalTheme, setGlobalTheme}) => {
             <Outlet/>
             <PopNewCard/>
             {/* pop-up end */}
-            <Header set globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
+            <Header isAuth={isAuth} globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
             <Main isLoading={isLoading} cards={cards}/>
         </Wrapper>
     )

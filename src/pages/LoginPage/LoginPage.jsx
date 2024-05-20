@@ -40,6 +40,7 @@ export const LoginPage = ({setIsAuth}) => {
         signIn(inputValue).then((response) => {
             setErrorMsg('')
             setIsAuth(response.user)
+            localStorage.setItem('user', JSON.stringify(response.user))
             navigate(paths.MAIN)
         }).catch((error) => {
             setErrorMsg(error.message)
