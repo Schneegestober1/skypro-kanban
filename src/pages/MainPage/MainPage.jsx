@@ -10,6 +10,7 @@ import { getCards } from "../../api/cardsApi.js";
 export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
     const [cards, setCards] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const [errorMsg, setErrorMsg] = useState('')
 
     const addCard = (event) => {
         event.preventDefault()
@@ -28,10 +29,15 @@ export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
     useEffect(() => {
         setIsLoading(true)
         getCards(isAuth.token).then((response) => {
+            setErrorMsg('')
             setCards(response.tasks)
             setIsLoading(false)
+        }).catch((error) => {
+            setErrorMsg(error)
+        }).finally(() => {
+            setIsLoading(false)
         })
-    }, [])
+    },[])
 
     return(
         <Wrapper>
@@ -40,7 +46,7 @@ export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
             <PopNewCard/>
             {/* pop-up end */}
             <Header isAuth={isAuth} globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
-            <Main isLoading={isLoading} cards={cards}/>
+            <Main errorMsg={errorMsg} isLoading={isLoading} cards={cards}/>
         </Wrapper>
     )
 }
