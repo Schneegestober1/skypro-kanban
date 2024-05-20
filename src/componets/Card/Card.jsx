@@ -16,7 +16,7 @@ export const Card = ({card}) => {
                     <CardTheme $color={colors[card.topic]}>
                         <p>{card.topic}</p>
                     </CardTheme>
-                    <Link to={`/card/${card.id}`}>
+                    <Link to={`/card/${card._id}`}>
                         <CardBtn>
                             <div></div>
                             <div></div>

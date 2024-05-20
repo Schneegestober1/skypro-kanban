@@ -1,4 +1,5 @@
 import { Container } from "../../global.styled"
+import { LoaderItem } from "../../loader/LoaderItem.jsx"
 import { Column } from "../Column/Column"
 import * as S from './main.styled.js'
 
@@ -7,7 +8,7 @@ export const Main = ({cards, isLoading}) => {
         <S.Main> 
             <Container>
                 <S.MainBlock>
-                    {isLoading ? 'Loading .....' : (
+                    {isLoading ? LoaderItem() : (
                         <S.MainContent>
                         <Column title={'Без статуса'} cards={cards.filter(el => el.status === 'Без статуса')}/>				
                         <Column title={'Нужно сделать'} cards={cards.filter(el => el.status === 'Нужно сделать')}/>				

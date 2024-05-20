@@ -1,20 +1,20 @@
 import {Main} from "../../componets/Main/Main.jsx";
 import {useEffect, useState} from "react";
-import {tasks} from "../../data.js";
 import {Wrapper} from "../../global.styled.js";
 import {PopNewCard} from "../../componets/Popups/PopNewCard/PopNewCard.jsx";
 import {Header} from "../../componets/Header/Header.jsx";
 import { Outlet } from "react-router-dom";
+import { getCards } from "../../api/cardsApi.js";
 
 
 export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
-    const [cards, setCards] = useState(tasks)
+    const [cards, setCards] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
     const addCard = (event) => {
         event.preventDefault()
         const newCard = {
-            id: cards[cards.length - 1].id + 1,
+            _id: cards[cards.length - 1].id + 1,
             date: '05/05/2024',
             topic: 'Web Design',
             title: 'Название задачи',
@@ -27,9 +27,10 @@ export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
 
     useEffect(() => {
         setIsLoading(true)
-        setTimeout(() => {
+        getCards(isAuth.token).then((response) => {
+            setCards(response.tasks)
             setIsLoading(false)
-        }, 500)
+        })
     }, [])
 
     return(
