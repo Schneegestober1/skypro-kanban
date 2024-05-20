@@ -3,7 +3,6 @@ import {
     ErrorMsgRed,
     Modal,
     ModalBlock, ModalBtn, ModalFormGroup,
-    ModalFormGroupP,
     ModalFormLogin,
     ModalInput,
     ModalTtl
@@ -62,7 +61,7 @@ export const RegisterPage = () => {
                             <ErrorMsgRed>{errorMsg}</ErrorMsgRed>
                             <ModalBtn type="button" id="SignUpEnter"><a onClick={registerHandler}>Зарегистрироваться</a></ModalBtn>
                             <ModalFormGroup>
-                                <ModalFormGroup>Уже есть аккаунт?</ModalFormGroup>
+                                <p>Уже есть аккаунт?</p>
                                 <Link to={paths.LOGIN}> Войдите здесь</Link>
                             </ModalFormGroup>
                         </ModalFormLogin>
@@ -72,3 +71,5 @@ export const RegisterPage = () => {
         </Wrapper>
     )
 }
+
+// 01:06:44
