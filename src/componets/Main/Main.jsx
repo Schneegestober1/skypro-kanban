@@ -15,8 +15,9 @@ export const Main = ({cards, isLoading, errorMsg}) => {
                         <Column title={'В работе'} cards={cards.filter(el => el.status === 'В работе')}/>				
                         <Column title={'Тестирование'} cards={cards.filter(el => el.status === 'Тестирование')}/>				
                         <Column title={'Готово'} cards={cards.filter(el => el.status === 'Готово')}/>				
-                    </S.MainContent>)
-                    )}
+                        </S.MainContent>)
+                        )
+                    }
                 </S.MainBlock>
             </Container>
         </S.Main>

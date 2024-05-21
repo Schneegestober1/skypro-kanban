@@ -52,4 +52,3 @@ export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
     )
 }
 
-// 1:44:10
