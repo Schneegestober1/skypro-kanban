@@ -24,3 +24,5 @@ export const AppRoutes = ({globalTheme, setGlobalTheme}) => {
         </Routes>
     )
 }
+
+// 

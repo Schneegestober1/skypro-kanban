@@ -6,9 +6,10 @@ import {Header} from "../../componets/Header/Header.jsx";
 import { Outlet } from "react-router-dom";
 import { getCards } from "../../api/cardsApi.js";
 import { UserContext } from "../../context/userContext.jsx";
+import { CardsContext } from "../../context/cardsContext.jsx";
 
 export const MainPage = ({globalTheme, setGlobalTheme}) => {
-    const [cards, setCards] = useState([])
+    const {cards, setCards} = useContext(CardsContext)
     const [isLoading, setIsLoading] = useState(false)
     const [errorMsg, setErrorMsg] = useState('')
     const {user} = useContext(UserContext)
