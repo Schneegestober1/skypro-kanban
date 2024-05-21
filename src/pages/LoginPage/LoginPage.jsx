@@ -19,7 +19,6 @@ export const LoginPage = () => {
     const [errorMsg, setErrorMsg] = useState('')
     const {loginUser} = useContext(UserContext)
 
-
     const [inputValue, setInputValue] = useState({
         login: '',
         password: '',

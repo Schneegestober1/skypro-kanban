@@ -7,7 +7,6 @@ import { Outlet } from "react-router-dom";
 import { getCards } from "../../api/cardsApi.js";
 import { UserContext } from "../../context/userContext.jsx";
 
-
 export const MainPage = ({globalTheme, setGlobalTheme}) => {
     const [cards, setCards] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -43,7 +42,6 @@ export const MainPage = ({globalTheme, setGlobalTheme}) => {
 
     return(
         <Wrapper>
-           
             {/* pop-up start */}
             <Outlet/>
             <PopNewCard/>

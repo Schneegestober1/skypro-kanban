@@ -4,9 +4,6 @@ import * as S from './header.styled.js'
 import { Link } from "react-router-dom";
 import { paths } from "../../routesPaths.js";
 
-// 1:13:14 
-
-
 export const Header = ({addCard, globalTheme, setGlobalTheme, user}) => {
 	const [isOpenedModalUserWindow, setIsOpenedModalUserWindow] = useState(false);
 

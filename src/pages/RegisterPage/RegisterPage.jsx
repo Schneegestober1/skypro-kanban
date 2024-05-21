@@ -17,6 +17,7 @@ export const RegisterPage = () => {
     const navigate = useNavigate()
     const [errorMsg, setErrorMsg] = useState('')
 
+    // Некомб. состояние 
     // const [nameInput, setNameInput] = useState()
     // const [loginInput, setLoginInput] = useState()
     // const [passInput, setPassInput] = useState()
