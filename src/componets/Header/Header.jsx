@@ -7,7 +7,7 @@ import { paths } from "../../routesPaths.js";
 // 1:13:14 
 
 
-export const Header = ({addCard, globalTheme, setGlobalTheme, isAuth}) => {
+export const Header = ({addCard, globalTheme, setGlobalTheme, user}) => {
 	const [isOpenedModalUserWindow, setIsOpenedModalUserWindow] = useState(false);
 
 	function handlerOpenModalWindow(event) {
@@ -27,11 +27,11 @@ export const Header = ({addCard, globalTheme, setGlobalTheme, isAuth}) => {
 					</S.HeaderLogoDark>
 					<S.HeaderNav>
 						<S.HeaderBtnMainNew id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></S.HeaderBtnMainNew>
-						<S.HeaderUser href="#user-set-target" onClick={(event) => handlerOpenModalWindow(event)}>{isAuth.name}</S.HeaderUser>
+						<S.HeaderUser href="#user-set-target" onClick={(event) => handlerOpenModalWindow(event)}>{user.name}</S.HeaderUser>
 							{isOpenedModalUserWindow && (
 								<div className="header__pop-user-set pop-user-set" id="user-set-target">
-									<p className="pop-user-set__name">{isAuth.name}</p>
-									<p className="pop-user-set__mail">{isAuth.login}</p>
+									<p className="pop-user-set__name">{user.name}</p>
+									<p className="pop-user-set__mail">{user.login}</p>
 									<div className="pop-user-set__theme">
 										<p>Темная тема</p>
 										<input type="checkbox" className="checkbox" name="checkbox" onChange={()=> setGlobalTheme(!globalTheme)}/>

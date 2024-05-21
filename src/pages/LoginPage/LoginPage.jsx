@@ -9,15 +9,13 @@ import {
     ModalInput,
     ModalTtl
 } from "../RegisterPage/registerPage.styled.js";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { paths } from "../../routesPaths.js";
 import { signIn } from "../../api/auth.js";
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/userContext.jsx";
 
-export const LoginPage = ({setIsAuth}) => {
-
-    const navigate = useNavigate()
+export const LoginPage = () => {
     const [errorMsg, setErrorMsg] = useState('')
     const {loginUser} = useContext(UserContext)
 

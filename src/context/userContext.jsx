@@ -22,5 +22,11 @@ export const UserProvider = ({children}) => {
         localStorage.setItem('user', JSON.stringify(response.user))
         navigate(paths.MAIN)
     }
-    return <UserContext.Provider value={{user, loginUser}}>{children}</UserContext.Provider>
+
+    const logOutUser = () => {
+        setUser(null)
+		navigate(paths.LOGIN)
+        localStorage.removeItem('user')
+    }
+    return <UserContext.Provider value={{user, loginUser, logOutUser}}>{children}</UserContext.Provider>
 }

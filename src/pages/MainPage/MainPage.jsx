@@ -8,12 +8,11 @@ import { getCards } from "../../api/cardsApi.js";
 import { UserContext } from "../../context/userContext.jsx";
 
 
-export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
+export const MainPage = ({globalTheme, setGlobalTheme}) => {
     const [cards, setCards] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [errorMsg, setErrorMsg] = useState('')
-    const context = useContext(UserContext)
-    console.log(context.user);
+    const {user} = useContext(UserContext)
 
     const addCard = (event) => {
         event.preventDefault()
@@ -31,7 +30,7 @@ export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
 
     useEffect(() => {
         setIsLoading(true)
-        getCards(isAuth.token).then((response) => {
+        getCards(user.token).then((response) => {
             setErrorMsg('')
             setCards(response.tasks)
             setIsLoading(false)
@@ -49,7 +48,7 @@ export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
             <Outlet/>
             <PopNewCard/>
             {/* pop-up end */}
-            <Header isAuth={isAuth} globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
+            <Header user={user} globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
             <Main errorMsg={errorMsg} isLoading={isLoading} cards={cards}/>
         </Wrapper>
     )
