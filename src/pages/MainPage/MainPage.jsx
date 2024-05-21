@@ -33,7 +33,7 @@ export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
             setCards(response.tasks)
             setIsLoading(false)
         }).catch((error) => {
-            setErrorMsg(error)
+            setErrorMsg(error.message)
         }).finally(() => {
             setIsLoading(false)
         })
@@ -41,6 +41,7 @@ export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
 
     return(
         <Wrapper>
+           
             {/* pop-up start */}
             <Outlet/>
             <PopNewCard/>
@@ -50,3 +51,5 @@ export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
         </Wrapper>
     )
 }
+
+// 1:44:10
