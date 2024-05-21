@@ -12,12 +12,15 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { paths } from "../../routesPaths.js";
 import { signIn } from "../../api/auth.js";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../context/userContext.jsx";
 
 export const LoginPage = ({setIsAuth}) => {
 
     const navigate = useNavigate()
     const [errorMsg, setErrorMsg] = useState('')
+    const {loginUser} = useContext(UserContext)
+
 
     const [inputValue, setInputValue] = useState({
         login: '',
@@ -39,9 +42,7 @@ export const LoginPage = ({setIsAuth}) => {
 
         signIn(inputValue).then((response) => {
             setErrorMsg('')
-            setIsAuth(response.user)
-            localStorage.setItem('user', JSON.stringify(response.user))
-            navigate(paths.MAIN)
+            loginUser(response)
         }).catch((error) => {
             setErrorMsg(error.message)
         })

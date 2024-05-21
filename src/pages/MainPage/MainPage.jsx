@@ -1,16 +1,19 @@
 import {Main} from "../../componets/Main/Main.jsx";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {Wrapper} from "../../global.styled.js";
 import {PopNewCard} from "../../componets/Popups/PopNewCard/PopNewCard.jsx";
 import {Header} from "../../componets/Header/Header.jsx";
 import { Outlet } from "react-router-dom";
 import { getCards } from "../../api/cardsApi.js";
+import { UserContext } from "../../context/userContext.jsx";
 
 
 export const MainPage = ({globalTheme, setGlobalTheme, isAuth}) => {
     const [cards, setCards] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [errorMsg, setErrorMsg] = useState('')
+    const context = useContext(UserContext)
+    console.log(context.user);
 
     const addCard = (event) => {
         event.preventDefault()
