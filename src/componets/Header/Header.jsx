@@ -1,6 +1,10 @@
 import { useState } from "react"
 import { Container } from "../../global.styled.js";
 import * as S from './header.styled.js'
+import { Link } from "react-router-dom";
+import { paths } from "../../routesPaths.js";
+
+// 1:13:14 
 
 
 export const Header = ({addCard, globalTheme, setGlobalTheme}) => {
@@ -32,7 +36,7 @@ export const Header = ({addCard, globalTheme, setGlobalTheme}) => {
 										<p>Темная тема</p>
 										<input type="checkbox" className="checkbox" name="checkbox" onChange={()=> setGlobalTheme(!globalTheme)}/>
 									</div>
-									<button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
+									<button type="button" className="_hover03"><Link to={paths.EXIT}>Выйти</Link></button>
 								</div>
 							)}
 					</S.HeaderNav>					
