@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const CardsContext = createContext(null)
 
@@ -8,4 +8,3 @@ export const CardsProvider = ({children}) => {
     return <CardsContext.Provider value={{cards, setCards}}>{children}</CardsContext.Provider>
 }
 
-// 36:00

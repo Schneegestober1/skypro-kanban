@@ -3,13 +3,34 @@ import { Container } from "../../global.styled.js";
 import * as S from './header.styled.js'
 import { Link } from "react-router-dom";
 import { paths } from "../../routesPaths.js";
+import { addNewCard } from "../../api/cardsApi.js";
 
-export const Header = ({addCard, globalTheme, setGlobalTheme, user}) => {
+export const Header = ({globalTheme, setGlobalTheme, user}) => {
 	const [isOpenedModalUserWindow, setIsOpenedModalUserWindow] = useState(false);
 
 	function handlerOpenModalWindow(event) {
 		event.preventDefault()
 		setIsOpenedModalUserWindow(perv => !perv)
+	}
+
+	const onAddNewCard = () => {
+		
+		const newCard = {
+			date: '05/05/2024',
+			topic: 'Web Design',
+			title: 'Название задачи',
+			status: 'Без статуса',
+			description: ''
+		}
+
+		addNewCard({token: user.token, newTask: newCard})
+		.then((response) => {
+			console.log(response);
+		}).catch((error) => {
+			console.log(error);
+		})
+	
+		
 	}
 
     return (
@@ -23,7 +44,7 @@ export const Header = ({addCard, globalTheme, setGlobalTheme, user}) => {
 						<a href="" target="_self"><img src="/img/logo_dark.png" alt="logo"/></a>
 					</S.HeaderLogoDark>
 					<S.HeaderNav>
-						<S.HeaderBtnMainNew id="btnMainNew"><a href="#popNewCard" onClick={addCard}>Создать новую задачу</a></S.HeaderBtnMainNew>
+						<S.HeaderBtnMainNew id="btnMainNew"><a href="#popNewCard" onClick={onAddNewCard}>Создать новую задачу</a></S.HeaderBtnMainNew>
 						<S.HeaderUser href="#user-set-target" onClick={(event) => handlerOpenModalWindow(event)}>{user.name}</S.HeaderUser>
 							{isOpenedModalUserWindow && (
 								<div className="header__pop-user-set pop-user-set" id="user-set-target">

@@ -14,19 +14,7 @@ export const MainPage = ({globalTheme, setGlobalTheme}) => {
     const [errorMsg, setErrorMsg] = useState('')
     const {user} = useContext(UserContext)
 
-    const addCard = (event) => {
-        event.preventDefault()
-        const newCard = {
-            _id: cards[cards.length - 1].id + 1,
-            date: '05/05/2024',
-            topic: 'Web Design',
-            title: 'Название задачи',
-            status: 'Без статуса',
-        }
-        setCards(
-            [...cards, newCard ]
-        )
-    }
+
 
     useEffect(() => {
         setIsLoading(true)
@@ -47,7 +35,7 @@ export const MainPage = ({globalTheme, setGlobalTheme}) => {
             <Outlet/>
             <PopNewCard/>
             {/* pop-up end */}
-            <Header user={user} globalTheme={globalTheme} setGlobalTheme={setGlobalTheme} addCard={addCard}/>
+            <Header user={user} globalTheme={globalTheme} setGlobalTheme={setGlobalTheme}/>
             <Main errorMsg={errorMsg} isLoading={isLoading} cards={cards}/>
         </Wrapper>
     )
