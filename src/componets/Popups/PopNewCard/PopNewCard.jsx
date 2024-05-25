@@ -1,20 +1,61 @@
+import { useContext, useState } from "react"
+import { addNewCard } from "../../../api/cardsApi"
+import { Link } from "react-router-dom"
+import { paths } from "../../../routesPaths"
+import { UserContext } from "../../../context/userContext"
+
+// 01:02:44
+
 export const PopNewCard= () => {
+    const {user} = useContext(UserContext)
+
+    const [inputValue, setInputValue] = useState({
+        date: new Date(),
+        topic: '',
+        title: '',
+        status: 'Без статуса',
+        description: ''
+    })
+
+    const onChangeInput = (e) => {
+        const {value, name} = e.target
+        setInputValue({...inputValue, [name]: value})
+    }
+
+
+	const onAddNewCard = () => {
+		
+		const newCard = {
+			date: '05/05/2024',
+			topic: 'Web Design',
+			title: 'Название задачи',
+			status: 'Без статуса', 
+			description: ''
+		}
+
+		addNewCard({token: user.token, newTask: inputValue})
+		.then((response) => {
+			console.log(response);
+		}).catch((error) => {
+			console.log(error);
+		})
+	}
     return (
         <div className="pop-new-card" id="popNewCard">
         <div className="pop-new-card__container">
             <div className="pop-new-card__block">
                 <div className="pop-new-card__content">
                     <h3 className="pop-new-card__ttl">Создание задачи</h3>
-                    <a href="#" className="pop-new-card__close">&#10006;</a>
+                    <Link to={paths.MAIN} className="pop-new-card__close">&#10006;</Link>
                     <div className="pop-new-card__wrap">
                         <form className="pop-new-card__form form-new" id="formNewCard" action="#">
                             <div className="form-new__block">
                                 <label htmlFor="formTitle" className="subttl">Название задачи</label>
-                                <input className="form-new__input" type="text" name="name" id="formTitle" placeholder="Введите название задачи..." autoFocus/>
+                                <input onChange={onChangeInput} className="form-new__input" type="text" name="title" id="formTitle" placeholder="Введите название задачи..." autoFocus/>
                             </div>
                             <div className="form-new__block">
                                 <label htmlFor="textArea" className="subttl">Описание задачи</label>
-                                <textarea className="form-new__area" name="text" id="textArea"  placeholder="Введите описание задачи..."></textarea>
+                                <textarea onChange={onChangeInput} className="form-new__area" name="description" id="textArea"  placeholder="Введите описание задачи..."></textarea>
                             </div>
                         </form>
                         <div className="pop-new-card__calendar calendar">

@@ -7,6 +7,7 @@ import PrivateRoute from "./PriviteRoutes.jsx";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage.jsx";
 import { PopBrowsePage } from "./pages/PopUps/PopBrowse/PopBrowsePage.jsx";
 import { PopExitPage } from "./pages/PopUps/ExitPage/PopExitPage.jsx";
+import { PopNewCardPage } from "./pages/PopUps/PopNewCardPage/PopNewCardPage.jsx";
 
 export const AppRoutes = ({globalTheme, setGlobalTheme}) => {
  
@@ -16,6 +17,7 @@ export const AppRoutes = ({globalTheme, setGlobalTheme}) => {
                 <Route path={paths.MAIN} element={<MainPage globalTheme={globalTheme} setGlobalTheme={setGlobalTheme}/>}>
                     <Route path={paths.EXIT} element={<PopExitPage/>}/>
                     <Route path={paths.CARD_ID} element={<PopBrowsePage/>}/>
+                    <Route path={paths.NEW_CARD} element={<PopNewCardPage/>}/>
                 </Route>
             </Route>
             <Route path={paths.LOGIN} element={<LoginPage/>}/>
