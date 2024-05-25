@@ -1,16 +1,20 @@
 import { useContext, useState } from "react"
 import { addNewCard } from "../../../api/cardsApi"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { paths } from "../../../routesPaths"
 import { UserContext } from "../../../context/userContext"
-
-// 01:02:44
+import { CardsContext } from "../../../context/cardsContext"
+import { DayPicker } from "react-day-picker"
+import { ErrorPopNewCard } from "../../../pages/RegisterPage/registerPage.styled"
 
 export const PopNewCard= () => {
     const {user} = useContext(UserContext)
-
+    const {setCards} = useContext(CardsContext)
+    const navigate = useNavigate()
+    
+    const [date, setDate] = useState(new Date())
+    const [error, setError] = useState('')
     const [inputValue, setInputValue] = useState({
-        date: new Date(),
         topic: '',
         title: '',
         status: 'Без статуса',
@@ -22,24 +26,30 @@ export const PopNewCard= () => {
         setInputValue({...inputValue, [name]: value})
     }
 
-
 	const onAddNewCard = () => {
+        setError('')
+
+        if(!inputValue.description) {
+            return setError('Введите описание задачи')
+        }
+
+        const title = inputValue.title || 'Новая задача'
+        const topic = inputValue.topic || 'Research'
 		
-		const newCard = {
-			date: '05/05/2024',
-			topic: 'Web Design',
-			title: 'Название задачи',
-			status: 'Без статуса', 
-			description: ''
+		const newTask = {
+			...inputValue, topic, title, date
 		}
 
-		addNewCard({token: user.token, newTask: inputValue})
+		addNewCard({token: user.token, newTask: newTask})
 		.then((response) => {
-			console.log(response);
+			setCards(response.tasks)
+            navigate(paths.MAIN)
 		}).catch((error) => {
-			console.log(error);
+            setError(error.message)
 		})
 	}
+
+
     return (
         <div className="pop-new-card" id="popNewCard">
         <div className="pop-new-card__container">
@@ -59,8 +69,9 @@ export const PopNewCard= () => {
                             </div>
                         </form>
                         <div className="pop-new-card__calendar calendar">
-                            <p className="calendar__ttl subttl">Даты</p>									
-                            <div className="calendar__block">
+                            <p className="calendar__ttl subttl">Даты</p>
+                            <DayPicker mode="single" selected={date} onSelect={setDate}/>								
+                            {/* <div className="calendar__block">
                                 <div className="calendar__nav">
                                     <div className="calendar__month">Сентябрь 2023</div>
                                     <div className="nav__actions">
@@ -129,7 +140,7 @@ export const PopNewCard= () => {
                                 <div className="calendar__period">
                                     <p className="calendar__p date-end">Выберите срок исполнения <span className="date-control"></span>.</p>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className="pop-new-card__categories categories">
@@ -146,7 +157,9 @@ export const PopNewCard= () => {
                             </div>
                         </div>
                     </div>
-                    <button className="form-new__create _hover01" id="btnCreate">Создать задачу</button>
+                    <ErrorPopNewCard>{error && error}</ErrorPopNewCard>
+                    {/* перенести из RP */}
+                    <button onClick={onAddNewCard} className="form-new__create _hover01" id="btnCreate">Создать задачу</button>
                 </div>
             </div>
         </div>
