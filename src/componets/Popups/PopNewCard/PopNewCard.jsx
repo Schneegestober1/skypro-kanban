@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom"
 import { paths } from "../../../routesPaths"
 import { UserContext } from "../../../context/userContext"
 import { CardsContext } from "../../../context/cardsContext"
-import { DayPicker } from "react-day-picker"
 import { ErrorPopNewCard } from "../../../pages/RegisterPage/registerPage.styled"
+import { DP } from "./popNewCard.styled"
 
 export const PopNewCard= () => {
     const {user} = useContext(UserContext)
@@ -49,6 +49,10 @@ export const PopNewCard= () => {
 		})
 	}
 
+    const getDateFormat = (date) => {
+        const formatDate = date.toLocaleDateString('ru-RU')
+        return <p style={{ marginTop: '10px'}}>Срок исполнения:<br/>{formatDate}</p>
+    }
 
     return (
         <div className="pop-new-card" id="popNewCard">
@@ -70,7 +74,7 @@ export const PopNewCard= () => {
                         </form>
                         <div className="pop-new-card__calendar calendar">
                             <p className="calendar__ttl subttl">Даты</p>
-                            <DayPicker mode="single" selected={date} onSelect={setDate}/>								
+                            <DP mode="single" selected={date} onSelect={setDate} footer={getDateFormat(date)}/>								
                             {/* <div className="calendar__block">
                                 <div className="calendar__nav">
                                     <div className="calendar__month">Сентябрь 2023</div>
