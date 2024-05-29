@@ -123,19 +123,19 @@ export const FormNewInput = styled.input`
   margin: 20px 0;
 
   &::-moz-placeholder {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1px;
-  color: #94A6BE;
-  letter-spacing: -0.14px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1px;
+    color: #94A6BE;
+    letter-spacing: -0.14px;
   }
 
   &::placeholder {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1px;
-  color: #94A6BE;
-  letter-spacing: -0.14px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1px;
+    color: #94A6BE;
+    letter-spacing: -0.14px;
   }
 `
 
@@ -154,30 +154,31 @@ export const FormNewArea = styled.textarea`
   height: 200px;
 
   &::-moz-placeholder {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1px;
-  color: #94A6BE;
-  letter-spacing: -0.14px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1px;
+    color: #94A6BE;
+    letter-spacing: -0.14px;
   }
 
   &::placeholder {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1px;
-  color: #94A6BE;
-  letter-spacing: -0.14px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1px;
+    color: #94A6BE;
+    letter-spacing: -0.14px;
  }
 `
 
 export const PopNewCardCalendar = styled.div`
 width: 182px;
 margin-bottom: 20px;
+
 @media screen and (max-width: 660px) {
-    max-width: 340px;
-    width: 100%;
-    display: none;
-    margin-bottom: 7px;
+  max-width: 340px;
+  width: 100%;
+  display: none;
+  margin-bottom: 7px;
 }
 `
 
@@ -225,7 +226,6 @@ export const FormNewCreate = styled.button`
   ${Hover01}
 `
 
-
 export const DP = styled(DayPicker)`
 --rdp-cell-size: 22px;
 --rdp-caption-font-size: 14px;
@@ -262,6 +262,7 @@ margin-right: 7px;
 background-color: #FFE4C2;
 color: #FF6D00;
 `
+
 export const CategoriesThemeGreen = styled(CategoriesThemeColor)`
 display: inline-block;
 width: auto;
@@ -272,6 +273,7 @@ margin-right: 7px;
 background-color: #B4FDD1;
 color: #06B16E;
 `
+
 export const CategoriesThemePurple = styled(CategoriesThemeColor)`
 display: inline-block;
 width: auto;
@@ -280,5 +282,5 @@ padding: 8px 20px;
 border-radius: 24px;
 margin-right: 7px;
 background-color: #E9D4FF;
-  color: #9A48F1;
+color: #9A48F1;
 `
