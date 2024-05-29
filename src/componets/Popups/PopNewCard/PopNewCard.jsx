@@ -5,7 +5,7 @@ import { paths } from "../../../routesPaths"
 import { UserContext } from "../../../context/userContext"
 import { CardsContext } from "../../../context/cardsContext"
 import { ErrorPopNewCard } from "../../../pages/RegisterPage/registerPage.styled"
-import { CalendarTtl, CategoriesP, CategoriesThemes, DP, FormNewArea, FormNewBlock, FormNewCreate, FormNewInput, PopNewCardBlock, PopNewCardCalendar, PopNewCardCategoriesCategories, PopNewCardClose, PopNewCardContainer, PopNewCardContent, PopNewCardDiv, PopNewCardForm, PopNewCardTtl, PopNewCardWrap, RadioInput, SubttlLabel, WrapperRadio } from "./popNewCard.styled"
+import { CalendarTtl, CategoriesP, CategoriesThemeGreen, CategoriesThemeOrange, CategoriesThemePurple, CategoriesThemes, DP, FormNewArea, FormNewBlock, FormNewCreate, FormNewInput, PopNewCardBlock, PopNewCardCalendar, PopNewCardCategoriesCategories, PopNewCardClose, PopNewCardContainer, PopNewCardContent, PopNewCardDiv, PopNewCardForm, PopNewCardTtl, PopNewCardWrap, RadioInput, SubttlLabel, WrapperRadio } from "./popNewCard.styled"
 
 export const PopNewCard= () => {
     const {user} = useContext(UserContext)
@@ -59,7 +59,7 @@ export const PopNewCard= () => {
     //     'Copywriting': 'purple', 
     // }
 
-    console.log(topic);
+    // console.log(topic);
     
     return (
         <PopNewCardDiv id="popNewCard">
@@ -87,16 +87,16 @@ export const PopNewCard= () => {
                         <PopNewCardCategoriesCategories>
                             <CategoriesP>Категория</CategoriesP>
                             <CategoriesThemes>
-                                <WrapperRadio $isActive={topic === 'Web Design'} className="categories__theme _orange">
-                                    <label htmlFor="radio1">Web Design</label>
+                                <WrapperRadio $isActive={topic === 'Web Design'}>
+                                    <CategoriesThemeOrange htmlFor="radio1">Web Design</CategoriesThemeOrange>
                                     <RadioInput onChange={(e) => setTopic(e.target.value)} id="radio1" type="radio" name="keks" value={'Web Design'}/> 
                                 </WrapperRadio>
-                                <WrapperRadio $isActive={topic === 'Research'} className="categories__theme _green">
-                                    <label htmlFor="radio2">Research</label>
+                                <WrapperRadio $isActive={topic === 'Research'}>
+                                    <CategoriesThemeGreen htmlFor="radio2">Research</CategoriesThemeGreen>
                                     <RadioInput onChange={(e) => setTopic(e.target.value)} className="_green" id="radio2" type="radio" name="keks" value={'Research'}/>
                                 </WrapperRadio>
-                                <WrapperRadio $isActive={topic === 'Copywriting'} className="categories__theme _purple">
-                                    <label htmlFor="radio3">Copywriting</label>
+                                <WrapperRadio $isActive={topic === 'Copywriting'}>
+                                    <CategoriesThemePurple htmlFor="radio3">Copywriting</CategoriesThemePurple>
                                     <RadioInput onChange={(e) => setTopic(e.target.value)} className="_purple" id="radio3" type="radio" name="keks" value={'Copywriting'}/>
                                 </WrapperRadio>
                             </CategoriesThemes>

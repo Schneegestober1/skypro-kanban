@@ -1,7 +1,7 @@
 import { DayPicker } from "react-day-picker";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Hover01, colorTheme } from "../../../global.styled";
+import { Hover01} from "../../../global.styled";
 
 export const PopNewCardDiv = styled.div`
   width: 100%;
@@ -240,6 +240,45 @@ display: none;
 
 export const WrapperRadio = styled.div`
 opacity: ${({$isActive}) => $isActive ? '1' : '0.4'};
-${(props) => colorTheme(props.$color)}
 
+`
+
+export const CategoriesThemeColor = styled.label`
+display: inline-block;
+width: auto;
+height: 30px;
+padding: 8px 20px;
+border-radius: 24px;
+margin-right: 7px;
+cursor: pointer;
+`
+export const CategoriesThemeOrange = styled(CategoriesThemeColor)`
+display: inline-block;
+width: auto;
+height: 30px;
+padding: 8px 20px;
+border-radius: 24px;
+margin-right: 7px;
+background-color: #FFE4C2;
+color: #FF6D00;
+`
+export const CategoriesThemeGreen = styled(CategoriesThemeColor)`
+display: inline-block;
+width: auto;
+height: 30px;
+padding: 8px 20px;
+border-radius: 24px;
+margin-right: 7px;
+background-color: #B4FDD1;
+color: #06B16E;
+`
+export const CategoriesThemePurple = styled(CategoriesThemeColor)`
+display: inline-block;
+width: auto;
+height: 30px;
+padding: 8px 20px;
+border-radius: 24px;
+margin-right: 7px;
+background-color: #E9D4FF;
+  color: #9A48F1;
 `
