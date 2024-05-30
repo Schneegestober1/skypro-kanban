@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BtnBg, Hover01, Hover03, Hover04} from "../../../global.styled";
+import { BtnBg, Hover01, Hover03, Hover04, colorTheme} from "../../../global.styled";
 import { Link } from "react-router-dom";
 
 export const BtnBrowse = styled.button`
@@ -99,6 +99,8 @@ export const CategoriesTheme = styled.div`
   font-weight: 600;
   line-height: 14px;
   white-space: nowrap;
+
+  ${(props) => colorTheme(props.$color)}
 }
 `
 

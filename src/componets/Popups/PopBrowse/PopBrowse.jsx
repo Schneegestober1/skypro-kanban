@@ -3,15 +3,15 @@ import { paths } from "../../../routesPaths.js"
 import { BtnBrowse, BtnBrowseEditBtnBor, BtnGroup, BtnLink, CategoriesPsubttl, CategoriesTheme, FormBrowseArea, FormBrowseBlock, PopBrowseBlock, PopBrowseBtnBrowse, PopBrowseContainer, PopBrowseContent, PopBrowseDiv, PopBrowseForm, PopBrowseStatus, PopBrowseTopBlock, PopBrowseTtl, PopBrowseWrap,  StatusP, StatusTheme, StatusThemes, SubttlBrowseLabel, ThemeDownCategories } from "./popBrowse.styled.js"
 import { useParams } from "react-router-dom"
 
-export const PopBrowse = () => {
+export const PopBrowse = ({card}) => {
 
     const {id} = useParams()
 
-    // const colors = {
-    //     'Web Design': 'orange',
-    //     'Research': 'green',
-    //     'Copywriting': 'purple', 
-    // }
+    const colors = {
+        'Web Design': 'orange',
+        'Research': 'green',
+        'Copywriting': 'purple', 
+    }
     
     return (
         <PopBrowseDiv id="popBrowse">
@@ -21,8 +21,8 @@ export const PopBrowse = () => {
                         <PopBrowseTopBlock>
                             <PopBrowseTtl>Название задачи {id}</PopBrowseTtl>
                             {/* Тут надо думоть */}
-                            <CategoriesTheme>
-                                <p className="_orange">Web Design</p>
+                            <CategoriesTheme $color={colors[card.topic]}>
+                                <p>{card.topic}</p>
                             </CategoriesTheme>
                              {/* Тут надо думоть */}
                         </PopBrowseTopBlock>
