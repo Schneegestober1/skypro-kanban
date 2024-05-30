@@ -99,6 +99,13 @@ export const Hover03 = css`
 }
 `
 
+export const Hover04 = css`
+&:hover {
+  background: #94A6BE;
+color: #FFFFFF;
+}
+`
+
 const orange = css`
 background-color: ${({theme}) => theme.orangeBg}; 
 color: ${({theme}) => theme.orangeText};

@@ -53,14 +53,6 @@ export const PopNewCard= () => {
         return <p style={{ marginTop: '10px'}}>Срок исполнения:<br/>{formatDate}</p>
     }
 
-    // const colors = {
-    //     'Web Design': 'orange',
-    //     'Research': 'green',
-    //     'Copywriting': 'purple', 
-    // }
-
-    // console.log(topic);
-    
     return (
         <PopNewCardDiv id="popNewCard">
             <PopNewCardContainer>
