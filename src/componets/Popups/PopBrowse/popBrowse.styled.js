@@ -99,9 +99,9 @@ export const CategoriesTheme = styled.div`
   font-weight: 600;
   line-height: 14px;
   white-space: nowrap;
-
-  ${(props) => colorTheme(props.$color)}
 }
+
+${(props) => colorTheme(props.$color)}
 `
 
 export const PopBrowseStatus = styled.div`
