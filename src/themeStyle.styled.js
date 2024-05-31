@@ -13,6 +13,8 @@ export const darkTheme = {
     themeColortext: '#fff',
     dotColor:'#565EEF',
     buttonExit: '#fff',
+    PopExitBlockColor: '#000',
+    PopExitTtlH2:'#fff',
 }
 
 export const lightTheme = {
@@ -30,4 +32,6 @@ export const lightTheme = {
     themeColortext: '#000',
     dotColor:'#94A6BE',
     buttonExit: '#565EEF',
+    PopExitBlockColor: '#FFFFFF',
+    PopExitTtlH2:'#000',
 }       

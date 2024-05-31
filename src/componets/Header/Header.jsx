@@ -37,7 +37,7 @@ export const Header = ({globalTheme, setGlobalTheme, user}) => {
 										<p>Темная тема</p>
 										<input type="checkbox" className="checkbox" name="checkbox" onChange={()=> setGlobalTheme(!globalTheme)}/>
 									</S.PopUserSetTheme>
-									<button type="button" className="_hover03"><Link to={paths.EXIT}>Выйти</Link></button>
+									<S.HeaderUserButtonExit to={paths.EXIT} type="button">Выйти</S.HeaderUserButtonExit>
 								</S.HeaderPopUserSet>
 							)}
 					</S.HeaderNav>					

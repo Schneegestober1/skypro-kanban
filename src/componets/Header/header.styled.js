@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { Hover01, Hover02, Hover03 } from "../../global.styled";
+import { Hover01, Hover02, Hover03} from "../../global.styled";
+import { Link } from "react-router-dom";
+
 
 export const Header = styled.header`
   width: 100%;
@@ -46,7 +48,7 @@ export const HeaderNav = styled.nav`
 `
 
 export const HeaderBtnMainNew = styled.button`
- width: 178px;
+  width: 178px;
   height: 30px;
   border-radius: 4px;
   background-color: #565EEF;
@@ -183,6 +185,29 @@ input:checked[type=checkbox]::before {
 }
 `
 // не работает
-export const HeaderUserButtinExit = styled.button`
-${Hover03}
+export const HeaderUserButtonExit = styled(Link)`
+
+  width: 80px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 0.7px solid var(--palette-navy-60, #565eef);
+  outline: none;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+  color: #FFFFFF;
+  color: #565eef;
+  margin-left: 30px;
+
+  a {
+  color: #FFFFFF;
+ }
+
+ ${Hover03}
 `
