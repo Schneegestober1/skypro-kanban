@@ -12,7 +12,8 @@ export const PopBrowse = ({card}) => {
         'Research': 'green',
         'Copywriting': 'purple', 
     }
-    
+
+    console.log(card);
     return (
         <PopBrowseDiv id="popBrowse">
                 <PopBrowseContainer>

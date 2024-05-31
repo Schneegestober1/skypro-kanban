@@ -93,7 +93,7 @@ export const CategoriesTheme = styled.div`
   border-radius: 24px;
   margin-right: 7px;
   opacity: 1;
-
+  
   p {
   font-size: 14px;
   font-weight: 600;

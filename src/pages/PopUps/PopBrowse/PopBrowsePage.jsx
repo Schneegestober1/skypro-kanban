@@ -1,7 +1,7 @@
 import { PopBrowse } from "../../../componets/Popups/PopBrowse/PopBrowse"
 
-export const PopBrowsePage = () => {
+export const PopBrowsePage = ({card}) => {
     return (
-        <PopBrowse/>
+        <PopBrowse card={{card}}/>
     )
 }

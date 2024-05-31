@@ -30,15 +30,15 @@ export const Header = ({globalTheme, setGlobalTheme, user}) => {
 						<S.HeaderBtnMainNew id="btnMainNew"><Link to={paths.NEW_CARD}>Создать новую задачу</Link></S.HeaderBtnMainNew>
 						<S.HeaderUser href="#user-set-target" onClick={(event) => handlerOpenModalWindow(event)}>{user.name}</S.HeaderUser>
 							{isOpenedModalUserWindow && (
-								<div className="header__pop-user-set pop-user-set" id="user-set-target">
-									<p className="pop-user-set__name">{user.name}</p>
-									<p className="pop-user-set__mail">{user.login}</p>
-									<div className="pop-user-set__theme">
+								<S.HeaderPopUserSet id="user-set-target">
+									<S.PopUserSetName>{user.name}</S.PopUserSetName>
+									<S.PopUserSetEmail>{user.login}</S.PopUserSetEmail>
+									<S.PopUserSetTheme>
 										<p>Темная тема</p>
 										<input type="checkbox" className="checkbox" name="checkbox" onChange={()=> setGlobalTheme(!globalTheme)}/>
-									</div>
+									</S.PopUserSetTheme>
 									<button type="button" className="_hover03"><Link to={paths.EXIT}>Выйти</Link></button>
-								</div>
+								</S.HeaderPopUserSet>
 							)}
 					</S.HeaderNav>					
 				</S.HeaderBlock>
