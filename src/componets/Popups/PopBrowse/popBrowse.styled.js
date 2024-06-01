@@ -266,6 +266,31 @@ export const BtnBrowseEditBtnBor = styled.button`
  ${Hover03}
 `
 
+export const PopBrowseBtnEdit = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-right: 8px;
+
+  button {
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 0 14px;
+}
+
+@media screen and (max-width: 495px) {
+
+  margin-right: 0px;
+  width: 100%;
+
+  button {
+    width: 100%;
+    height: 40px;
+  }
+}
+`
+
 
 
 

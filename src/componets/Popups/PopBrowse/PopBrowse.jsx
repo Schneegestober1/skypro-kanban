@@ -1,6 +1,6 @@
 import { Calendar } from "../../Calendar/Calendar.jsx"
 import { paths } from "../../../routesPaths.js"
-import { BtnBrowse, BtnBrowseEditBtnBor, BtnGroup, BtnLink, CategoriesPsubttl, CategoriesTheme, FormBrowseArea, FormBrowseBlock, PopBrowseBlock, PopBrowseBtnBrowse, PopBrowseContainer, PopBrowseContent, PopBrowseDiv, PopBrowseForm, PopBrowseStatus, PopBrowseTopBlock, PopBrowseTtl, PopBrowseWrap,  StatusP, StatusTheme, StatusThemes, SubttlBrowseLabel, ThemeDownCategories } from "./popBrowse.styled.js"
+import { BtnBrowse, BtnBrowseEditBtnBor, BtnGroup, BtnLink, CategoriesPsubttl, CategoriesTheme, FormBrowseArea, FormBrowseBlock, PopBrowseBlock, PopBrowseBtnBrowse, PopBrowseBtnEdit, PopBrowseContainer, PopBrowseContent, PopBrowseDiv, PopBrowseForm, PopBrowseStatus, PopBrowseTopBlock, PopBrowseTtl, PopBrowseWrap,  StatusP, StatusTheme, StatusThemes, SubttlBrowseLabel, ThemeDownCategories } from "./popBrowse.styled.js"
 import { useParams } from "react-router-dom"
 import { CardsContext } from "../../../context/cardsContext.jsx"
 import { useContext } from "react"
@@ -9,20 +9,16 @@ import { useContext } from "react"
 export const PopBrowse = () => {
 
     const {cards} = useContext(CardsContext)
-    
-
-
     const {id} = useParams()
-
     const colors = {
         'Web Design': 'orange',
         'Research': 'green',
         'Copywriting': 'purple', 
     }
-
     const tasksCard = cards.find((card) => card._id === id);
-    console.log(tasksCard);
 
+
+    
     return (
         <PopBrowseDiv id="popBrowse">
                 <PopBrowseContainer>
@@ -71,20 +67,21 @@ export const PopBrowse = () => {
                         </ThemeDownCategories>
                         <PopBrowseBtnBrowse>
                             <BtnGroup>
-                                <BtnBrowseEditBtnBor>Сохранить</BtnBrowseEditBtnBor>
                                 <BtnBrowseEditBtnBor>Редактировать задачу</BtnBrowseEditBtnBor>
                                 <BtnBrowseEditBtnBor>Удалить задачу</BtnBrowseEditBtnBor>
                             </BtnGroup>
                             <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
                         </PopBrowseBtnBrowse>
-                        {/* <div className="pop-browse__btn-edit _hide">
-                            <div className="btn-group">
+                        <PopBrowseBtnEdit>
+                            <BtnGroup>
                                 <button className="btn-edit__edit _btn-bg _hover01"><a href="#">Сохранить</a></button>
-                                <button className="btn-edit__edit _btn-bor _hover03"><a href="#">Отменить</a></button>
-                                <button className="btn-edit__delete _btn-bor _hover03" id="btnDelete"><a href="#">Удалить задачу</a></button>
-                            </div>
-                            <button className="btn-edit__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
-                        </div>                 */}
+                                {/* <button className="btn-edit__edit _btn-bor _hover03"><a href="#">Отменить</a></button>
+                                <button className="btn-edit__delete _btn-bor _hover03" id="btnDelete"><a href="#">Удалить задачу</a></button> */}
+                                <BtnBrowseEditBtnBor>Отменить4</BtnBrowseEditBtnBor>
+                                <BtnBrowseEditBtnBor>Удалить задачу4</BtnBrowseEditBtnBor>
+                            </BtnGroup>
+                            <BtnBrowse><BtnLink>Закрыть</BtnLink></BtnBrowse>
+                        </PopBrowseBtnEdit>                
                     </PopBrowseContent>
                 </PopBrowseBlock>
             </PopBrowseContainer>
