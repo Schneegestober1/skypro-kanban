@@ -44,7 +44,7 @@ export const PopNewCard= () => {
 			setCards(response.tasks)
             navigate(paths.MAIN)
 		}).catch((error) => {
-            setError(error.message)
+            setError(error)
 		})
 	}
 

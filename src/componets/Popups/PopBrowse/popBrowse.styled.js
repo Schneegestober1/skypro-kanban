@@ -291,6 +291,11 @@ export const PopBrowseBtnEdit = styled.div`
 }
 `
 
+export const PopBrowseError = styled.p`
+color: red;
+margin-top: 5px;
+`
+
 
 
 

@@ -1,14 +1,19 @@
 import { Calendar } from "../../Calendar/Calendar.jsx"
 import { paths } from "../../../routesPaths.js"
-import { BtnBrowse, BtnBrowseEditBtnBor, BtnGroup, BtnLink, CategoriesPsubttl, CategoriesTheme, FormBrowseArea, FormBrowseBlock, PopBrowseBlock, PopBrowseBtnBrowse, PopBrowseBtnEdit, PopBrowseContainer, PopBrowseContent, PopBrowseDiv, PopBrowseForm, PopBrowseStatus, PopBrowseTopBlock, PopBrowseTtl, PopBrowseWrap,  StatusP, StatusTheme, StatusThemes, SubttlBrowseLabel, ThemeDownCategories } from "./popBrowse.styled.js"
-import { useParams } from "react-router-dom"
+import { BtnBrowse, BtnBrowseEditBtnBor, BtnGroup, BtnLink, CategoriesPsubttl, CategoriesTheme, FormBrowseArea, FormBrowseBlock, PopBrowseBlock, PopBrowseBtnBrowse, PopBrowseBtnEdit, PopBrowseContainer, PopBrowseContent, PopBrowseDiv, PopBrowseError, PopBrowseForm, PopBrowseStatus, PopBrowseTopBlock, PopBrowseTtl, PopBrowseWrap,  StatusP, StatusTheme, StatusThemes, SubttlBrowseLabel, ThemeDownCategories } from "./popBrowse.styled.js"
+import { useNavigate, useParams } from "react-router-dom"
 import { CardsContext } from "../../../context/cardsContext.jsx"
-import { useContext } from "react"
+import { useContext, useState } from "react"
+import { deleteCard } from "../../../api/cardsApi.js"
+import { UserContext } from "../../../context/userContext.jsx"
 
 
 export const PopBrowse = () => {
 
-    const {cards} = useContext(CardsContext)
+    const {cards, setCards} = useContext(CardsContext)
+    const {user, setUser} = useContext(UserContext)
+    const navigation = useNavigate()
+    const [error, setError] = useState('')
     const {id} = useParams()
     const colors = {
         'Web Design': 'orange',
@@ -17,7 +22,16 @@ export const PopBrowse = () => {
     }
     const tasksCard = cards.find((card) => card._id === id);
 
+    const deleteTask = () => {
 
+        deleteCard({token: user.token, id}).then((response) => {
+            setError('')
+            setCards(response.tasks)
+            navigation(paths.MAIN)
+        }).catch((error) => {
+            setError(error.message)
+		})
+    }
     
     return (
         <PopBrowseDiv id="popBrowse">
@@ -68,20 +82,19 @@ export const PopBrowse = () => {
                         <PopBrowseBtnBrowse>
                             <BtnGroup>
                                 <BtnBrowseEditBtnBor>Редактировать задачу</BtnBrowseEditBtnBor>
-                                <BtnBrowseEditBtnBor>Удалить задачу</BtnBrowseEditBtnBor>
+                                <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу</BtnBrowseEditBtnBor>
                             </BtnGroup>
                             <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
                         </PopBrowseBtnBrowse>
                         <PopBrowseBtnEdit>
                             <BtnGroup>
-                                <button className="btn-edit__edit _btn-bg _hover01"><a href="#">Сохранить</a></button>
-                                {/* <button className="btn-edit__edit _btn-bor _hover03"><a href="#">Отменить</a></button>
-                                <button className="btn-edit__delete _btn-bor _hover03" id="btnDelete"><a href="#">Удалить задачу</a></button> */}
+                                <BtnBrowse><BtnLink>Сохранить4</BtnLink></BtnBrowse>
                                 <BtnBrowseEditBtnBor>Отменить4</BtnBrowseEditBtnBor>
-                                <BtnBrowseEditBtnBor>Удалить задачу4</BtnBrowseEditBtnBor>
+                                <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу4</BtnBrowseEditBtnBor>
                             </BtnGroup>
-                            <BtnBrowse><BtnLink>Закрыть</BtnLink></BtnBrowse>
-                        </PopBrowseBtnEdit>                
+                            <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть4</BtnLink></BtnBrowse>
+                        </PopBrowseBtnEdit> 
+                        <PopBrowseError>{error && error}</PopBrowseError>            
                     </PopBrowseContent>
                 </PopBrowseBlock>
             </PopBrowseContainer>
