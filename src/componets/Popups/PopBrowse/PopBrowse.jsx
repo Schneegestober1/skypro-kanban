@@ -2,8 +2,15 @@ import { Calendar } from "../../Calendar/Calendar.jsx"
 import { paths } from "../../../routesPaths.js"
 import { BtnBrowse, BtnBrowseEditBtnBor, BtnGroup, BtnLink, CategoriesPsubttl, CategoriesTheme, FormBrowseArea, FormBrowseBlock, PopBrowseBlock, PopBrowseBtnBrowse, PopBrowseContainer, PopBrowseContent, PopBrowseDiv, PopBrowseForm, PopBrowseStatus, PopBrowseTopBlock, PopBrowseTtl, PopBrowseWrap,  StatusP, StatusTheme, StatusThemes, SubttlBrowseLabel, ThemeDownCategories } from "./popBrowse.styled.js"
 import { useParams } from "react-router-dom"
+import { CardsContext } from "../../../context/cardsContext.jsx"
+import { useContext } from "react"
 
-export const PopBrowse = ({card}) => {
+
+export const PopBrowse = () => {
+
+    const {cards} = useContext(CardsContext)
+    
+
 
     const {id} = useParams()
 
@@ -13,19 +20,19 @@ export const PopBrowse = ({card}) => {
         'Copywriting': 'purple', 
     }
 
-    console.log(card);
+    const tasksCard = cards.find((card) => card._id === id);
+    console.log(tasksCard);
+
     return (
         <PopBrowseDiv id="popBrowse">
                 <PopBrowseContainer>
                 <PopBrowseBlock>
                     <PopBrowseContent>
                         <PopBrowseTopBlock>
-                            <PopBrowseTtl>Название задачи {id}</PopBrowseTtl>
-                            {/* Тут надо думоть */}
-                            <CategoriesTheme $color={colors[card.topic]}>
-                                <p>{card.topic}</p>
+                            <PopBrowseTtl>{tasksCard.title}</PopBrowseTtl>
+                            <CategoriesTheme $topicColor={`${colors[tasksCard.topic]}`}>
+                                <p>{tasksCard.topic}</p>
                             </CategoriesTheme>
-                             {/* Тут надо думоть */}
                         </PopBrowseTopBlock>
                         <PopBrowseStatus>
                             <StatusP>Статус</StatusP>
