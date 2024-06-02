@@ -5,7 +5,7 @@ import { paths } from "../../../routesPaths"
 import { UserContext } from "../../../context/userContext"
 import { CardsContext } from "../../../context/cardsContext"
 import { ErrorPopNewCard } from "../../../pages/RegisterPage/registerPage.styled"
-import { CalendarTtl, CategoriesP, CategoriesThemeGreen, CategoriesThemeOrange, CategoriesThemePurple, CategoriesThemes, DP, FormNewArea, FormNewBlock, FormNewCreate, FormNewInput, PopNewCardBlock, PopNewCardCalendar, PopNewCardCategoriesCategories, PopNewCardClose, PopNewCardContainer, PopNewCardContent, PopNewCardDiv, PopNewCardForm, PopNewCardTtl, PopNewCardWrap, RadioInput, SubttlLabel, WrapperRadio } from "./popNewCard.styled"
+import { BoooTin, CalendarTtl, CategoriesP, CategoriesThemeGreen, CategoriesThemeOrange, CategoriesThemePurple, CategoriesThemes, DP, FormNewArea, FormNewBlock, FormNewCreate, FormNewInput, PopNewCardBlock, PopNewCardCalendar, PopNewCardCategoriesCategories, PopNewCardClose, PopNewCardContainer, PopNewCardContent, PopNewCardDiv, PopNewCardForm, PopNewCardTtl, PopNewCardWrap, RadioInput, SubttlLabel, WrapperRadio } from "./popNewCard.styled"
 
 export const PopNewCard= () => {
     const {user} = useContext(UserContext)
@@ -50,7 +50,7 @@ export const PopNewCard= () => {
 
     const getDateFormat = (date) => {
         const formatDate = date.toLocaleDateString('ru-RU')
-        return <p style={{ marginTop: '10px'}}>Срок исполнения:<br/>{formatDate}</p>
+        return <BoooTin>Срок исполнения:<br/>{formatDate}</BoooTin>
     }
 
     return (

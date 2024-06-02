@@ -131,7 +131,6 @@ export const StatusTheme = styled.div`
   padding: 11px 14px 10px;
   margin-right: 7px;
   margin-bottom: 7px;
-
   p {
   font-size: 14px;
   line-height: 1;
@@ -140,6 +139,17 @@ export const StatusTheme = styled.div`
 
 ${Hover04}
 `
+
+export const StatusThemeP = styled.p`
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.14px;
+`
+
+export const PopBrowseRadioInput = styled.input`
+display: none;
+`
+
 
 export const PopBrowseWrap = styled.div`
   display: flex;
@@ -295,6 +305,8 @@ export const PopBrowseError = styled.p`
 color: red;
 margin-top: 5px;
 `
+
+
 
 
 

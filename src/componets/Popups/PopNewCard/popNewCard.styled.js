@@ -284,3 +284,7 @@ margin-right: 7px;
 background-color: #E9D4FF;
 color: #9A48F1;
 `
+
+export const BoooTin = styled.p`
+margin-top: 10px;
+`
