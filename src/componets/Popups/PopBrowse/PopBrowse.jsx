@@ -6,7 +6,6 @@ import { useContext, useState } from "react"
 import { deleteCard, editCard } from "../../../api/cardsApi.js"
 import { UserContext } from "../../../context/userContext.jsx"
 import { BoooTin, DP } from "../PopNewCard/popNewCard.styled.js"
-import { formatDate } from "date-fns"
 
 
 export const PopBrowse = () => {
@@ -138,7 +137,7 @@ export const PopBrowse = () => {
                         </ThemeDownCategories>
                         <PopBrowseBtnBrowse>
                             <BtnGroup>
-                                <BtnBrowseEditBtnBor>Редактировать задачу</BtnBrowseEditBtnBor>
+                                <BtnBrowseEditBtnBor onClick={()=>{setIsActive(true)}}>Редактировать задачу</BtnBrowseEditBtnBor>
                                 <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу</BtnBrowseEditBtnBor>
                             </BtnGroup>
                             <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
