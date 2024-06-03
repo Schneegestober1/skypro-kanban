@@ -65,6 +65,10 @@ export const PopBrowse = () => {
         })
     }
 
+    const cancellationEdit = () => {
+        setEdtitInputTask(tasksCard);
+    }
+
     const getDateFormat = (date) => {
         if(isActive) {
             const formatDate = date.toLocaleDateString('ru-RU')
@@ -141,7 +145,7 @@ export const PopBrowse = () => {
                         <PopBrowseBtnEdit>
                         <BtnGroup>
                             <BtnBrowse onClick={onSaveEditTask}><BtnLink>Сохранить</BtnLink></BtnBrowse>
-                            <BtnBrowseEditBtnBor>Отменить</BtnBrowseEditBtnBor>
+                            <BtnBrowseEditBtnBor onClick={cancellationEdit}>Отменить</BtnBrowseEditBtnBor>
                             <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу</BtnBrowseEditBtnBor>
                         </BtnGroup>
                         <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
