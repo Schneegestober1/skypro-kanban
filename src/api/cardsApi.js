@@ -67,7 +67,7 @@ export const deleteCard =({token, id}) => {
 
 export const editCard =({token, editTask, id}) => {
     return fetch( url + `/${id}`, {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify(editTask),
         headers: {
             Authorization: `Bearer ${token}`
