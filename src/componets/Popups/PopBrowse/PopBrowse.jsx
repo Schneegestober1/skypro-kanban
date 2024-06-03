@@ -122,7 +122,7 @@ export const PopBrowse = () => {
                                     <SubttlBrowseLabel htmlFor="textArea01">Описание задачи</SubttlBrowseLabel>
                                     {isActive ? 
                                     <FormBrowseArea onChange={(e) => {setEdtitInputTask({...editInputTask, description: e.target.value})}} value={editInputTask.description} name="text" id="textArea01" placeholder="Введите описание задачи..."></FormBrowseArea> :
-                                    <FormBrowseArea name="text" id="textArea01"  readOnly placeholder="Введите описание задачи44444..."></FormBrowseArea>} 
+                                    <FormBrowseArea name="text" id="textArea01" value={editInputTask.description}  readOnly placeholder="Введите описание задачи..."></FormBrowseArea>} 
                                 </FormBrowseBlock>
                             </PopBrowseForm>
                             {isActive ? 
@@ -135,22 +135,23 @@ export const PopBrowse = () => {
                                 <p className="_orange">Web Design</p>
                             </CategoriesTheme>
                         </ThemeDownCategories>
-                        <PopBrowseBtnBrowse>
-                            <BtnGroup>
-                                <BtnBrowseEditBtnBor onClick={()=>{setIsActive(true)}}>Редактировать задачу</BtnBrowseEditBtnBor>
-                                <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу</BtnBrowseEditBtnBor>
-                            </BtnGroup>
-                            <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
-                        </PopBrowseBtnBrowse>
+                        {isActive ? 
                         <PopBrowseBtnEdit>
-                            <BtnGroup>
-                                <BtnBrowse><BtnLink>Сохранить4</BtnLink></BtnBrowse>
-                                <BtnBrowseEditBtnBor>Отменить4</BtnBrowseEditBtnBor>
-                                <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу4</BtnBrowseEditBtnBor>
-                            </BtnGroup>
-                            <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть4</BtnLink></BtnBrowse>
-                        </PopBrowseBtnEdit> 
-                        <PopBrowseError>{error && error}</PopBrowseError>            
+                        <BtnGroup>
+                            <BtnBrowse><BtnLink>Сохранить</BtnLink></BtnBrowse>
+                            <BtnBrowseEditBtnBor>Отменить</BtnBrowseEditBtnBor>
+                            <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу</BtnBrowseEditBtnBor>
+                        </BtnGroup>
+                        <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть4</BtnLink></BtnBrowse>
+                       </PopBrowseBtnEdit> :
+                       <PopBrowseBtnBrowse>
+                       <BtnGroup>
+                           <BtnBrowseEditBtnBor onClick={()=>{setIsActive(true)}}>Редактировать задачу</BtnBrowseEditBtnBor>
+                           <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу</BtnBrowseEditBtnBor>
+                       </BtnGroup>
+                       <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
+                       </PopBrowseBtnBrowse>}
+                    <PopBrowseError>{error && error}</PopBrowseError>            
                     </PopBrowseContent>
                 </PopBrowseBlock>
             </PopBrowseContainer>
