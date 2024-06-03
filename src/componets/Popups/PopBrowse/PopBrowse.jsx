@@ -7,7 +7,6 @@ import { deleteCard, editCard } from "../../../api/cardsApi.js"
 import { UserContext } from "../../../context/userContext.jsx"
 import { BoooTin, DP } from "../PopNewCard/popNewCard.styled.js"
 
-
 export const PopBrowse = () => {
 
     const {cards, setCards} = useContext(CardsContext)
@@ -45,7 +44,6 @@ export const PopBrowse = () => {
         status: tasksCard.status,
     })
 
-
     const onSaveEditTask = () => {
         const editTask = {
             title: tasksCard.title,
@@ -78,8 +76,6 @@ export const PopBrowse = () => {
             return <BoooTin>Срок исполнения:<br/>{formatDate}</BoooTin>
         }
     }
-
-    console.log(editInputTask.status);
 
     return (
         <PopBrowseDiv id="popBrowse">

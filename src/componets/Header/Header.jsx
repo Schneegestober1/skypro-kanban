@@ -4,17 +4,13 @@ import * as S from './header.styled.js'
 import { Link } from "react-router-dom";
 import { paths } from "../../routesPaths.js";
 
-
 export const Header = ({globalTheme, setGlobalTheme, user}) => {
 	const [isOpenedModalUserWindow, setIsOpenedModalUserWindow] = useState(false)
-
-
 
 	function handlerOpenModalWindow(event) {
 		event.preventDefault()
 		setIsOpenedModalUserWindow(perv => !perv)
 	}
-
 
     return (
         <S.Header>
