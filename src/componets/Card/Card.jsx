@@ -8,6 +8,8 @@ export const Card = ({card}) => {
         'Research': 'green',
         'Copywriting': 'purple', 
     }
+
+    const currentDate = new Date(card.date).toLocaleString("ru-RU")
     
     return (
         <CardsItem>
@@ -40,7 +42,7 @@ export const Card = ({card}) => {
                                 </clipPath>
                             </defs>
                         </svg>
-                        <p>{card.date}</p>
+                        <p>{currentDate}</p>
                     </CardDate>
                 </CardContent>
             </CardsCard>

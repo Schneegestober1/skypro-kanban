@@ -70,6 +70,8 @@ export const Container = styled.div`
   padding: 0 30px;
 `
 
+// Можно еще так
+
 // export const Hover01 = (element) => styled[element]`
 // &:hover {
 //   background-color: #33399b;
@@ -81,6 +83,8 @@ export const Container = styled.div`
 //   color: #33399b;
 // }
 // `
+// Можно еще так
+
 
 export const Hover01 = css`
 &:hover {
@@ -95,6 +99,13 @@ export const Hover02 = css`
 export const Hover03 = css`
 &:hover {
   background-color: #33399b;
+  color: #FFFFFF;
+}
+`
+
+export const Hover04 = css`
+&:hover {
+  background: #94A6BE;
   color: #FFFFFF;
 }
 `

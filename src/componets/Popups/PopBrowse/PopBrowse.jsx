@@ -1,76 +1,166 @@
-import { Calendar } from "../../Calendar/Calendar.jsx"
 import { paths } from "../../../routesPaths.js"
-import { BtnBrowse, BtnLink } from "./popBrowse.styled.js"
-import { useParams } from "react-router-dom"
+import { BtnBrowse, BtnBrowseEditBtnBor, BtnGroup, BtnLink, CategoriesPsubttl, CategoriesTheme, FormBrowseArea, FormBrowseBlock, PopBrowseBlock, PopBrowseBtnBrowse, PopBrowseBtnEdit, PopBrowseContainer, PopBrowseContent, PopBrowseDiv, PopBrowseError, PopBrowseForm, PopBrowseRadioInput, PopBrowseStatus, PopBrowseTopBlock, PopBrowseTtl, PopBrowseWrap,  StatusP, StatusTheme, StatusThemeP, StatusThemes, SubttlBrowseLabel, ThemeDownCategories } from "./popBrowse.styled.js"
+import { useNavigate, useParams } from "react-router-dom"
+import { CardsContext } from "../../../context/cardsContext.jsx"
+import { useContext, useState } from "react"
+import { deleteCard, editCard } from "../../../api/cardsApi.js"
+import { UserContext } from "../../../context/userContext.jsx"
+import { BoooTin, DP } from "../PopNewCard/popNewCard.styled.js"
+
 
 export const PopBrowse = () => {
 
+    const {cards, setCards} = useContext(CardsContext)
+    const {user} = useContext(UserContext)
+    const [date, setDate] = useState(new Date())
+  
+    const navigation = useNavigate()
+    const [error, setError] = useState('')
     const {id} = useParams()
-    
+    const colors = {
+        'Web Design': 'orange',
+        'Research': 'green',
+        'Copywriting': 'purple', 
+    }
+    const tasksCard = cards.find((card) => card._id === id);
+
+    const deleteTask = () => {
+
+        deleteCard({token: user.token, id}).then((response) => {
+            setError('')
+            setCards(response.tasks)
+            navigation(paths.MAIN)
+        }).catch((error) => {
+            setError(error.message)
+		})
+    }
+
+    const [isActive, setIsActive] = useState(false)
+
+    const [editInputTask, setEdtitInputTask] = useState({
+        title: tasksCard.title,
+        topic: tasksCard.topic,
+        description: tasksCard.description,
+        date: tasksCard.date,
+        status: tasksCard.status,
+    })
+
+
+    const onSaveEditTask = () => {
+        const editTask = {
+            title: tasksCard.title,
+            topic: tasksCard.topic,
+            date: date,
+            description: editInputTask.description,
+            status: editInputTask.status,
+        }
+
+        editCard({token: user.token, editTask: editTask, id})
+        .then((response) => {
+            setCards(response.tasks);
+            navigation(paths.MAIN);
+        })
+        .catch((error) => {
+            setError(error.message);
+        })
+    }
+
+    const cancellationEdit = () => {
+        setEdtitInputTask(tasksCard);
+    }
+
+    const getDateFormat = (date) => {
+        if(isActive) {
+            const formatDate = date.toLocaleDateString('ru-RU')
+            return <BoooTin>Срок исполнения:<br/>{formatDate}</BoooTin>
+        } else {
+            const formatDate = date.toLocaleDateString('ru-RU')
+            return <BoooTin>Срок исполнения:<br/>{formatDate}</BoooTin>
+        }
+    }
+
+    console.log(editInputTask.status);
+
     return (
-        <div className="pop-browse" id="popBrowse">
-                <div className="pop-browse__container">
-                <div className="pop-browse__block">
-                    <div className="pop-browse__content">
-                        <div className="pop-browse__top-block">
-                            <h3 className="pop-browse__ttl">Название задачи {id}</h3>
-                            <div className="categories__theme theme-top _orange _active-category">
+        <PopBrowseDiv id="popBrowse">
+                <PopBrowseContainer>
+                <PopBrowseBlock>
+                    <PopBrowseContent>
+                        <PopBrowseTopBlock>
+                            <PopBrowseTtl>{tasksCard.title}</PopBrowseTtl>
+                            <CategoriesTheme $topicColor={`${colors[tasksCard.topic]}`}>
+                                <p>{tasksCard.topic}</p>
+                            </CategoriesTheme>
+                        </PopBrowseTopBlock>
+                        <PopBrowseStatus>
+                            <StatusP>Статус</StatusP>
+                            {isActive ? <StatusThemes>
+                                <StatusTheme $isActiv={editInputTask.status === 'Без статуса'}>
+                                    <StatusThemeP htmlFor="status1">Без статуса</StatusThemeP>
+                                    <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status1" value={'Без статуса'}/>
+                                </StatusTheme>
+                                <StatusTheme $isActiv={editInputTask.status === 'Нужно сделать'}>
+                                    <StatusThemeP htmlFor="status2">Нужно сделать</StatusThemeP>
+                                    <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status2" value={'Нужно сделать'}/>
+                                </StatusTheme>
+                                <StatusTheme $isActiv={editInputTask.status === 'В работе'}>
+                                    <StatusThemeP htmlFor="status3">В работе</StatusThemeP>
+                                    <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status3" value={'В работе'}/>
+                                </StatusTheme>
+                                <StatusTheme $isActiv={editInputTask.status === 'Тестирование'}>
+                                    <StatusThemeP htmlFor="status4">Тестирование</StatusThemeP>
+                                    <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status4" value={'Тестирование'}/>
+                                </StatusTheme>
+                                <StatusTheme $isActiv={editInputTask.status === 'Готово'}>
+                                    <StatusThemeP htmlFor="status5">Готово</StatusThemeP>
+                                    <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status5" value={'Готово'}/>
+                                </StatusTheme>
+                            </StatusThemes> :                             
+                            <StatusThemes>
+                                <StatusTheme>
+                                    <StatusThemeP>{tasksCard.status}</StatusThemeP>
+                                </StatusTheme>
+                            </StatusThemes>}
+                        </PopBrowseStatus>
+                        <PopBrowseWrap>
+                            <PopBrowseForm className="form-browse" id="formBrowseCard" action="#">									
+                                <FormBrowseBlock>
+                                    <SubttlBrowseLabel htmlFor="textArea01">Описание задачи</SubttlBrowseLabel>
+                                    {isActive ? 
+                                    <FormBrowseArea onChange={(e) => {setEdtitInputTask({...editInputTask, description: e.target.value})}} value={editInputTask.description} name="text" id="textArea01" placeholder="Введите описание задачи..."></FormBrowseArea> :
+                                    <FormBrowseArea name="text" id="textArea01" value={editInputTask.description}  readOnly placeholder="Введите описание задачи..."></FormBrowseArea>} 
+                                </FormBrowseBlock>
+                            </PopBrowseForm>
+                            {isActive ? 
+                            <DP mode="single" selected={date} onSelect={setDate} footer={getDateFormat(date)}/> :
+                            <DP selected={date}  footer={getDateFormat(date)}/>}
+                        </PopBrowseWrap>
+                        <ThemeDownCategories>
+                            <CategoriesPsubttl>Категория</CategoriesPsubttl>
+                            <CategoriesTheme>
                                 <p className="_orange">Web Design</p>
-                            </div>
-                        </div>
-                        <div className="pop-browse__status status">
-                            <p className="status__p subttl">Статус</p>
-                            <div className="status__themes">
-                                <div className="status__theme _hide">
-                                    <p>Без статуса</p>
-                                </div>
-                                <div className="status__theme _gray">
-                                    <p className="_gray">Нужно сделать</p>
-                                </div>
-                                <div className="status__theme _hide">
-                                    <p>В работе</p>
-                                </div>
-                                <div className="status__theme _hide">
-                                    <p>Тестирование</p>
-                                </div>
-                                <div className="status__theme _hide">
-                                    <p>Готово</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="pop-browse__wrap">
-                            <form className="pop-browse__form form-browse" id="formBrowseCard" action="#">									
-                                <div className="form-browse__block">
-                                    <label htmlFor="textArea01" className="subttl">Описание задачи</label>
-                                    <textarea className="form-browse__area" name="text" id="textArea01"  readOnly placeholder="Введите описание задачи..."></textarea>
-                                </div>
-                            </form>
-                            <Calendar/>
-                        </div>
-                        <div className="theme-down__categories theme-down">
-                            <p className="categories__p subttl">Категория</p>
-                            <div className="categories__theme _orange _active-category">
-                                <p className="_orange">Web Design</p>
-                            </div>
-                        </div>
-                        <div className="pop-browse__btn-browse ">
-                            <div className="btn-group">
-                                <button className="btn-browse__edit _btn-bor _hover03"><a href="#">Редактировать задачу</a></button>
-                                <button className="btn-browse__delete _btn-bor _hover03"><a href="#">Удалить задачу</a></button>
-                            </div>
-                            <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
-                        </div>
-                        <div className="pop-browse__btn-edit _hide">
-                            <div className="btn-group">
-                                <button className="btn-edit__edit _btn-bg _hover01"><a href="#">Сохранить</a></button>
-                                <button className="btn-edit__edit _btn-bor _hover03"><a href="#">Отменить</a></button>
-                                <button className="btn-edit__delete _btn-bor _hover03" id="btnDelete"><a href="#">Удалить задачу</a></button>
-                            </div>
-                            <button className="btn-edit__close _btn-bg _hover01"><a href="#">Закрыть</a></button>
-                        </div>                
-                    </div>
-                </div>
-            </div>
-        </div>
+                            </CategoriesTheme>
+                        </ThemeDownCategories>
+                        {isActive ? 
+                        <PopBrowseBtnEdit>
+                        <BtnGroup>
+                            <BtnBrowse onClick={onSaveEditTask}><BtnLink>Сохранить</BtnLink></BtnBrowse>
+                            <BtnBrowseEditBtnBor onClick={cancellationEdit}>Отменить</BtnBrowseEditBtnBor>
+                            <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу</BtnBrowseEditBtnBor>
+                        </BtnGroup>
+                        <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
+                       </PopBrowseBtnEdit> :
+                       <PopBrowseBtnBrowse>
+                       <BtnGroup>
+                           <BtnBrowseEditBtnBor onClick={()=>{setIsActive(true)}}>Редактировать задачу</BtnBrowseEditBtnBor>
+                           <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу</BtnBrowseEditBtnBor>
+                       </BtnGroup>
+                       <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
+                       </PopBrowseBtnBrowse>}
+                    <PopBrowseError>{error && error}</PopBrowseError>            
+                    </PopBrowseContent>
+                </PopBrowseBlock>
+            </PopBrowseContainer>
+    </PopBrowseDiv>
     )
 }

@@ -10,6 +10,11 @@ export const darkTheme = {
     greenText: '#B4FDD1',
     purpleBg: '#9A48F1',
     purpleText: '#E9D4FF',
+    themeColortext: '#fff',
+    dotColor:'#565EEF',
+    buttonExit: '#fff',
+    PopExitBlockColor: '#000',
+    PopExitTtlH2:'#fff',
 }
 
 export const lightTheme = {
@@ -24,4 +29,9 @@ export const lightTheme = {
     greenText: '#06B16E',
     purpleBg: '#E9D4FF',
     purpleText: '#9A48F1',
+    themeColortext: '#000',
+    dotColor:'#94A6BE',
+    buttonExit: '#565EEF',
+    PopExitBlockColor: '#FFFFFF',
+    PopExitTtlH2:'#000',
 }       
