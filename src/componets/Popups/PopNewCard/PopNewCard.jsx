@@ -85,11 +85,11 @@ export const PopNewCard= () => {
                                 </WrapperRadio>
                                 <WrapperRadio $isActive={topic === 'Research'}>
                                     <CategoriesThemeGreen htmlFor="radio2">Research</CategoriesThemeGreen>
-                                    <RadioInput onChange={(e) => setTopic(e.target.value)} className="_green" id="radio2" type="radio" name="keks" value={'Research'}/>
+                                    <RadioInput onChange={(e) => setTopic(e.target.value)}  id="radio2" type="radio" name="keks" value={'Research'}/>
                                 </WrapperRadio>
                                 <WrapperRadio $isActive={topic === 'Copywriting'}>
                                     <CategoriesThemePurple htmlFor="radio3">Copywriting</CategoriesThemePurple>
-                                    <RadioInput onChange={(e) => setTopic(e.target.value)} className="_purple" id="radio3" type="radio" name="keks" value={'Copywriting'}/>
+                                    <RadioInput onChange={(e) => setTopic(e.target.value)}  id="radio3" type="radio" name="keks" value={'Copywriting'}/>
                                 </WrapperRadio>
                             </CategoriesThemes>
                         </PopNewCardCategoriesCategories>

@@ -11,7 +11,7 @@ import { BoooTin, DP } from "../PopNewCard/popNewCard.styled.js"
 export const PopBrowse = () => {
 
     const {cards, setCards} = useContext(CardsContext)
-    const {user, setUser} = useContext(UserContext)
+    const {user} = useContext(UserContext)
     const [date, setDate] = useState(new Date())
   
     const navigation = useNavigate()
@@ -58,7 +58,7 @@ export const PopBrowse = () => {
         editCard({token: user.token, editTask: editTask, id})
         .then((response) => {
             setCards(response.tasks);
-            navigation(paths.HOME);
+            navigation(paths.MAIN);
         })
         .catch((error) => {
             setError(error.message);
@@ -74,6 +74,8 @@ export const PopBrowse = () => {
             return <BoooTin>Срок исполнения:<br/>{formatDate}</BoooTin>
         }
     }
+
+    console.log(editInputTask.status);
 
     return (
         <PopBrowseDiv id="popBrowse">
@@ -94,20 +96,20 @@ export const PopBrowse = () => {
                                     <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status1" value={'Без статуса'}/>
                                 </StatusTheme>
                                 <StatusTheme $isActiv={editInputTask.status === 'Нужно сделать'}>
-                                    <StatusThemeP htmlFor="status1">Нужно сделать</StatusThemeP>
+                                    <StatusThemeP htmlFor="status2">Нужно сделать</StatusThemeP>
                                     <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status2" value={'Нужно сделать'}/>
                                 </StatusTheme>
                                 <StatusTheme $isActiv={editInputTask.status === 'В работе'}>
-                                    <StatusThemeP htmlFor="status1">В работе</StatusThemeP>
+                                    <StatusThemeP htmlFor="status3">В работе</StatusThemeP>
                                     <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status3" value={'В работе'}/>
                                 </StatusTheme>
                                 <StatusTheme $isActiv={editInputTask.status === 'Тестирование'}>
-                                    <StatusThemeP htmlFor="status1">Тестирование</StatusThemeP>
+                                    <StatusThemeP htmlFor="status4">Тестирование</StatusThemeP>
                                     <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status4" value={'Тестирование'}/>
                                 </StatusTheme>
                                 <StatusTheme $isActiv={editInputTask.status === 'Готово'}>
-                                    <StatusThemeP htmlFor="status1">Готово</StatusThemeP>
-                                    <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status4" value={'Готово'}/>
+                                    <StatusThemeP htmlFor="status5">Готово</StatusThemeP>
+                                    <PopBrowseRadioInput onChange={(e) => {setEdtitInputTask({...editInputTask, status: e.target.value})}} type="radio" name="status" id="status5" value={'Готово'}/>
                                 </StatusTheme>
                             </StatusThemes> :                             
                             <StatusThemes>
@@ -138,11 +140,11 @@ export const PopBrowse = () => {
                         {isActive ? 
                         <PopBrowseBtnEdit>
                         <BtnGroup>
-                            <BtnBrowse><BtnLink>Сохранить</BtnLink></BtnBrowse>
+                            <BtnBrowse onClick={onSaveEditTask}><BtnLink>Сохранить</BtnLink></BtnBrowse>
                             <BtnBrowseEditBtnBor>Отменить</BtnBrowseEditBtnBor>
                             <BtnBrowseEditBtnBor onClick={deleteTask}>Удалить задачу</BtnBrowseEditBtnBor>
                         </BtnGroup>
-                        <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть4</BtnLink></BtnBrowse>
+                        <BtnBrowse><BtnLink to={paths.MAIN}>Закрыть</BtnLink></BtnBrowse>
                        </PopBrowseBtnEdit> :
                        <PopBrowseBtnBrowse>
                        <BtnGroup>

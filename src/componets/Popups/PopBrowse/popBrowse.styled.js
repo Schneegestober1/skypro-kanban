@@ -125,29 +125,27 @@ export const StatusThemes= styled.div`
 `
 
 export const StatusTheme = styled.div`
-  border-radius: 24px;
-  border: 0.7px solid rgba(148, 166, 190, 0.4);
-  color: #94A6BE;
-  padding: 11px 14px 10px;
-  margin-right: 7px;
-  margin-bottom: 7px;
-  p {
-  font-size: 14px;
-  line-height: 1;
-  letter-spacing: -0.14px;
-  }
-
-${Hover04}
+    border-radius: 24px;
+    border: 0.7px solid rgba(148, 166, 190, 0.4);
+    color: ${({$isActiv}) => $isActiv ? '#fff' : '#94A6BE'};
+    background: ${({$isActiv}) => $isActiv ? '#94A6BE' : ''};
+    padding: 11px 14px 10px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    cursor: pointer;
 `
 
-export const StatusThemeP = styled.p`
+export const StatusThemeP = styled.label`
   font-size: 14px;
   line-height: 1;
   letter-spacing: -0.14px;
+  cursor: pointer;
+  
 `
 
 export const PopBrowseRadioInput = styled.input`
 display: none;
+cursor: pointer;
 `
 
 
