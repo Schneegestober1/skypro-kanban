@@ -148,6 +148,7 @@ export const PopUserSetTheme = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
+  
 
   p {
   color: ${({theme}) => theme.themeColortext};
@@ -178,10 +179,12 @@ input[type=checkbox]::before {
   border-radius: 50%;
   background-color: ${({theme}) => theme.dotColor};
   transition: 0.5s;
+  
 }
 
 input:checked[type=checkbox]::before {
   left: 12px;
+  cursor: pointer;
 }
 `
 // не работает

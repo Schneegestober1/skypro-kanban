@@ -35,7 +35,7 @@ export const Header = ({globalTheme, setGlobalTheme, user}) => {
 									<S.PopUserSetEmail>{user.login}</S.PopUserSetEmail>
 									<S.PopUserSetTheme>
 										<p>Темная тема</p>
-										<input type="checkbox" className="checkbox" name="checkbox" onChange={()=> setGlobalTheme(!globalTheme)}/>
+										<input style={{cursor: 'pointer'}} type="checkbox" className="checkbox" name="checkbox" onChange={()=> setGlobalTheme(!globalTheme)}/>
 									</S.PopUserSetTheme>
 									<S.HeaderUserButtonExit to={paths.EXIT} type="button">Выйти</S.HeaderUserButtonExit>
 								</S.HeaderPopUserSet>
