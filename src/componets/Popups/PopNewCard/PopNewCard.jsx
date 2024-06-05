@@ -48,8 +48,8 @@ export const PopNewCard= () => {
 		})
 	}
 
-    const getDateFormat = (date) => {
-        const formatDate = date.toLocaleDateString('ru-RU')
+    Date.prototype.toString = function () {
+        const formatDate = this.toLocaleDateString('ru-RU')
         return <BoooTin>Срок исполнения:<br/>{formatDate}</BoooTin>
     }
 
@@ -73,7 +73,7 @@ export const PopNewCard= () => {
                             </PopNewCardForm>
                             <PopNewCardCalendar>
                                 <CalendarTtl>Даты</CalendarTtl>
-                                <DP mode="single" selected={date} onSelect={setDate} footer={getDateFormat(date)}/>
+                                <DP mode="single" selected={date} required onSelect={(date) => setDate(new Date(date))} footer={date.toString()}/>
                             </PopNewCardCalendar>
                         </PopNewCardWrap>
                         <PopNewCardCategoriesCategories>

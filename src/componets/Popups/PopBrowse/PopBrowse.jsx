@@ -157,7 +157,7 @@ export const PopBrowse = () => {
                                     </FormBrowseBlock>
                                 </PopBrowseForm>
                                 {isActive ? 
-                                <DP mode="single" selected={date} onSelect={setDate} footer={getDateFormat(date)}/> :
+                                <DP mode="single" required selected={date} onSelect={setDate} footer={getDateFormat(date)}/> :
                                 <DP selected={date}  footer={getDateFormat(date)}/>}
                             </PopBrowseWrap>
                             <ThemeDownCategories>
