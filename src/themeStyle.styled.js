@@ -13,7 +13,7 @@ export const darkTheme = {
     themeColortext: '#fff',
     dotColor:'#565EEF',
     buttonExit: '#fff',
-    PopExitBlockColor: '#000',
+    PopExitBlockColor: '#20202C',
     PopExitTtlH2:'#fff',
 }
 
