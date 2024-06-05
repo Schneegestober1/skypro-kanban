@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom"
 import { CardsCard, CardGroup, CardsItem, CardContent, CardDate, CardTheme, CardBtn, CardTitle } from "./card.styled.js"
-import { paths } from "../../routesPaths.js"
-
 
 export const Card = ({card}) => {
     const colors = {
