@@ -26,26 +26,32 @@ export const PopNewCard= () => {
         setInputValue({...inputValue, [name]: value})
     }
 
-	const onAddNewCard = () => {
-        setError('')
-
-        if(!inputValue.description) {
-            return setError('Введите описание задачи')
+    const onAddNewCard = async () => {
+        setError('');
+    
+        if (!inputValue.description) {
+          return setError('Введите описание задачи');
         }
-
+        if (!inputValue.title) {
+          return setError('Введите название задачи');
+        }
+        if (!topic) {
+          return setError('Выберете категорию');
+        }
+    
         const title = inputValue.title || 'Новая задача'
      
 		const newTask = {
-			...inputValue, topic, title, date
+			...inputValue, topic, title, date: date.toISOString()
 		}
 
-		addNewCard({token: user.token, newTask: newTask})
-		.then((response) => {
-			setCards(response.tasks)
-            navigate(paths.MAIN)
-		}).catch((error) => {
-            setError(error)
-		})
+        try {
+            const response = await addNewCard({ token: user.token, newTask });
+            setCards(response.tasks);
+            navigate(paths.MAIN);
+          } catch (error) {
+            setError(error.message || 'Произошла ошибка при создании задачи');
+          }
 	}
 
     Date.prototype.toString = function () {
