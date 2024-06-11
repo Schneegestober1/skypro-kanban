@@ -148,7 +148,6 @@ display: none;
 cursor: pointer;
 `
 
-
 export const PopBrowseWrap = styled.div`
   display: flex;
   align-items: flex-start;

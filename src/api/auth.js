@@ -10,7 +10,13 @@ export const register =({login, name, password}) => {
         })
     }).then((response) => {
         if(response.status === 400) {
-            throw new Error('Пользователь с таким логином уже существует')
+            return response.json().then(error => {
+                if (error.error === 'Пользователь с таким логином уже существует') {
+                    throw new Error('Пользователь с таким логином уже существует');
+                } else if (error.error === 'login должен содержать хотя бы 3 символа') {
+                    throw new Error('Имя, эл. почта или пароль должны содержать хотя бы 3 символа');
+                }
+            })
         }
         if(response.status === 500) {
             throw new Error('Ошибка сервера')

@@ -39,6 +39,9 @@ export const RegisterPage = () => {
         if(!login || !name || !password) {
            return setErrorMsg('Заполните все поля')
         }
+        if(password.length < 3) {
+           return setErrorMsg('password должен содержать хотя бы 3 символа')
+        }
         register(inputValue).then(() => {
             setErrorMsg('')
             navigate(paths.LOGIN)

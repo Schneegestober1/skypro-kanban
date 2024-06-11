@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import { CardsCard, CardGroup, CardsItem, CardContent, CardDate, CardTheme, CardBtn, CardTitle } from "./card.styled.js"
 
-
 export const Card = ({card}) => {
     const colors = {
         'Web Design': 'orange',
@@ -27,9 +26,9 @@ export const Card = ({card}) => {
                     </Link>
                 </CardGroup>
                 <CardContent>
-                    <a href="" target="_blank">
-                        <CardTitle>{card.title}</CardTitle>
-                    </a>
+                    <Link to={`/card/${card._id}`}>
+                     <CardTitle>{card.title}</CardTitle>
+                    </Link>
                     <CardDate>
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
                             <g clipPath="url(#clip0_1_415)">

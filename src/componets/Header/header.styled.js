@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Hover01, Hover02, Hover03} from "../../global.styled";
 import { Link } from "react-router-dom";
 
-
 export const Header = styled.header`
   width: 100%;
   margin: 0 auto;
@@ -20,10 +19,6 @@ export const HeaderBlock = styled.div`
   left: 0;
   padding: 0 10px;
 `
-
-// export const HeaderLogoImg = styled.div`
-// width: 85px;
-// `
 
 export const HeaderLogoLight = styled.div`
 display: ${({theme}) => !theme.isDark ? 'block' : 'none'};
@@ -149,7 +144,6 @@ export const PopUserSetTheme = styled.div`
   justify-content: space-between;
   margin-bottom: 30px;
   
-
   p {
   color: ${({theme}) => theme.themeColortext};
   font-size: 14px;
@@ -187,7 +181,7 @@ input:checked[type=checkbox]::before {
   cursor: pointer;
 }
 `
-// не работает
+
 export const HeaderUserButtonExit = styled(Link)`
 
   width: 80px;

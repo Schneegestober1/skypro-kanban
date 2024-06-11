@@ -3,7 +3,7 @@ import {MainPage} from "./pages/MainPage/MainPage.jsx";
 import {LoginPage} from "./pages/LoginPage/LoginPage.jsx";
 import {RegisterPage} from "./pages/RegisterPage/RegisterPage.jsx";
 import { paths } from "./routesPaths.js";
-import PrivateRoute from "./PriviteRoutes.jsx";
+import PrivateRoute from "./componets/PrivateRoutes/PrivateRoutes.jsx";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage.jsx";
 import { PopBrowsePage } from "./pages/PopUps/PopBrowse/PopBrowsePage.jsx";
 import { PopExitPage } from "./pages/PopUps/ExitPage/PopExitPage.jsx";
@@ -27,4 +27,3 @@ export const AppRoutes = ({globalTheme, setGlobalTheme}) => {
     )
 }
 
-// 
